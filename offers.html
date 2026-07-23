@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, viewport-fit=cover">
+    <title>Offers | PhoneHub - Premium Mobile Phones & Accessories</title>
+  <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-size='75' text-anchor='middle'%3E📱%3C/text%3E%3C/svg%3E">
+  <script src="tailwind.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'phone-primary': '#0F0E17',
+                        'phone-secondary': '#1A1A2E',
+                        'phone-accent': '#FF6B6B',
+                        'phone-accent2': '#FFD93D',
+                        'phone-accent3': '#6BCB77',
+                        'phone-purple': '#6C3CE1',
+                        'phone-light': '#F5F5F5',
+                        'phone-dark': '#0D0D1A',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        [dir="rtl"] .floating { animation-direction: reverse; }
+
+        /* ===== NAVBAR ===== */
+        .navbar-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 50;
+            padding: 16px 20px;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        .navbar-wrapper.scrolled {
+            padding: 8px 20px;
+            background: rgba(15, 14, 23, 0.95);
+            backdrop-filter: blur(16px) saturate(180%);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        }
+        .dark .navbar-wrapper.scrolled {
+            background: rgba(13, 13, 26, 0.96);
+        }
+
+        .navbar-inner {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+        .logo-icon {
+            background: linear-gradient(135deg, #FF6B6B, #FFD93D);
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        .logo-icon:hover { transform: rotate(-8deg) scale(1.05); }
+        .logo-icon i { color: #0F0E17; font-size: 1.2rem; }
+        .logo-text { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em; color: #ffffff; line-height: 1.1; }
+        .logo-text .highlight { color: #FF6B6B; }
+        .logo-sub { font-size: 0.45rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); font-weight: 600; display: block; margin-top: -2px; }
+
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex: 1;
+            justify-content: center;
+        }
+        .nav-link {
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.02em;
+            color: rgba(255, 255, 255, 0.75);
+            transition: all 0.25s ease;
+            cursor: pointer;
+            white-space: nowrap;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: #FF6B6B;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after { width: 60%; }
+        .nav-link:hover { color: #ffffff; }
+        .nav-link.active { color: #FFD93D; font-weight: 600; }
+
+        .dropdown-wrapper { position: relative; }
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 170px;
+            background: rgba(15, 14, 23, 0.96);
+            backdrop-filter: blur(16px);
+            border-radius: 16px;
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(10px);
+            transition: all 0.25s ease;
+            z-index: 1000;
+            border: 1px solid rgba(255, 107, 107, 0.15);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
+        }
+        .dark .dropdown-menu { background: rgba(13, 13, 26, 0.96); }
+        .dropdown-wrapper:hover .dropdown-menu,
+        .dropdown-wrapper.open .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 18px;
+            gap: 8px;
+            transition: all 0.2s;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 2px 8px;
+            text-decoration: none;
+        }
+        .dropdown-item:hover { background: rgba(255, 107, 107, 0.15); color: #FF6B6B; }
+        .dropdown-item.active { background: rgba(255, 107, 107, 0.1); color: #FFD93D; font-weight: 600; }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+        .btn-icon-rounded {
+            width: 36px;
+            height: 36px;
+            border-radius: 40px;
+            background: rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.8);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.85rem;
+        }
+        .dark .btn-icon-rounded { background: rgba(255, 255, 255, 0.03); color: rgba(255, 255, 255, 0.6); }
+        .btn-icon-rounded:hover { background: #FF6B6B; color: #0F0E17; border-color: #FF6B6B; }
+
+        .auth-toggle-wrapper {
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .auth-toggle-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        .auth-toggle-btn:hover {
+            background: rgba(255, 107, 107, 0.2);
+            border-color: #FF6B6B;
+            color: #FF6B6B;
+            transform: scale(1.05);
+        }
+        .auth-dropdown {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            min-width: 200px;
+            background: rgba(15, 14, 23, 0.96);
+            backdrop-filter: blur(16px);
+            border-radius: 16px;
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px) scale(0.95);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: 1px solid rgba(255, 107, 107, 0.15);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
+        }
+        .dark .auth-dropdown { background: rgba(13, 13, 26, 0.96); }
+        .auth-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        .auth-dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 18px;
+            gap: 12px;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 2px 8px;
+            text-decoration: none;
+        }
+        .auth-dropdown-item:hover {
+            background: rgba(255, 107, 107, 0.15);
+            color: #FF6B6B;
+        }
+        .auth-dropdown-item i { width: 20px; text-align: center; color: #FF6B6B; }
+        .auth-dropdown-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.06);
+            margin: 4px 16px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .mobile-toggle:hover { background: rgba(255, 107, 107, 0.2); border-color: #FF6B6B; }
+
+        .mobile-menu {
+            display: none;
+            background: rgba(15, 14, 23, 0.97);
+            backdrop-filter: blur(16px);
+            border-radius: 0 0 20px 20px;
+            border: 1px solid rgba(255, 107, 107, 0.08);
+            border-top: none;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            margin: 0 4px;
+        }
+        .dark .mobile-menu { background: rgba(13, 13, 26, 0.97); }
+        .mobile-menu.open { max-height: 80vh; overflow-y: auto; }
+        .mobile-menu-item {
+            display: block;
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .mobile-menu-item:last-child { border-bottom: none; }
+        .mobile-menu-item.active { color: #FFD93D; font-weight: 600; background: rgba(255, 107, 107, 0.06); border-left: 3px solid #FFD93D; }
+        .mobile-menu-item:hover { background: rgba(255, 255, 255, 0.04); }
+        .mobile-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: rgba(0, 0, 0, 0.1);
+        }
+        .mobile-dropdown-content.show { max-height: 300px; }
+        .mobile-dropdown-item {
+            display: block;
+            padding: 8px 20px 8px 36px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .mobile-dropdown-item:hover { color: #FF6B6B; }
+        .mobile-dropdown-item.active { color: #FFD93D; font-weight: 600; }
+
+        .mobile-actions {
+            padding: 12px 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .mobile-actions .btn-mobile-action {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .mobile-actions .btn-mobile-action:hover {
+            background: rgba(255, 107, 107, 0.15);
+            border-color: #FF6B6B;
+            color: #FF6B6B;
+        }
+        .mobile-actions .btn-mobile-action i { width: 18px; text-align: center; color: #FF6B6B; }
+
+        @media (max-width: 1199px) {
+            .desktop-nav .nav-link:not(.keep) { display: none; }
+            .desktop-nav .dropdown-wrapper:not(.keep) { display: none; }
+            .desktop-nav { justify-content: flex-end; }
+            .mobile-toggle { display: flex !important; }
+            .mobile-menu { display: block !important; }
+            .nav-actions .btn-icon-rounded { display: none; }
+            .nav-actions .auth-toggle-wrapper { display: none; }
+            .navbar-wrapper { padding: 12px 16px; }
+            .navbar-wrapper.scrolled { padding: 6px 16px; }
+            .logo-icon { width: 34px; height: 34px; }
+            .logo-icon i { font-size: 1rem; }
+            .logo-text { font-size: 1rem; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-wrapper { padding: 8px 12px; }
+            .navbar-wrapper.scrolled { padding: 4px 12px; }
+            .logo-icon { width: 30px; height: 30px; border-radius: 10px; }
+            .logo-icon i { font-size: 0.85rem; }
+            .logo-text { font-size: 0.85rem; }
+            .logo-sub { font-size: 0.35rem; }
+            .mobile-toggle { width: 34px; height: 34px; font-size: 0.9rem; }
+            .mobile-menu-item { font-size: 0.85rem; padding: 10px 16px; }
+            .mobile-actions .btn-mobile-action { font-size: 0.7rem; padding: 6px 12px; }
+        }
+
+        @media (max-width: 480px) {
+            .navbar-wrapper { padding: 6px 8px; }
+            .navbar-wrapper.scrolled { padding: 3px 8px; }
+            .logo-icon { width: 26px; height: 26px; border-radius: 8px; }
+            .logo-icon i { font-size: 0.7rem; }
+            .logo-text { font-size: 0.75rem; }
+            .logo-sub { display: none; }
+            .mobile-toggle { width: 30px; height: 30px; font-size: 0.8rem; border-radius: 8px; }
+            .mobile-menu-item { font-size: 0.8rem; padding: 10px 16px; }
+            .mobile-actions .btn-mobile-action { font-size: 0.65rem; padding: 5px 10px; }
+            .navbar-wrapper { padding: 6px 8px; width: 100%; }
+            .navbar-inner { width: 100%; padding: 0; }
+        }
+
+        @media (max-width: 360px) {
+            .navbar-wrapper { padding: 4px 6px; }
+            .logo-icon { width: 22px; height: 22px; border-radius: 6px; }
+            .logo-icon i { font-size: 0.6rem; }
+            .logo-text { font-size: 0.65rem; }
+            .mobile-toggle { width: 26px; height: 26px; font-size: 0.7rem; }
+            .mobile-menu-item { font-size: 0.7rem; padding: 8px 14px; }
+            .mobile-actions .btn-mobile-action { font-size: 0.55rem; padding: 4px 8px; }
+        }
+
+        /* ===== OFFERS PAGE SPECIFIC STYLES ===== */
+        .offer-card {
+            background: #FFFFFF;
+            border-radius: 28px;
+            transition: all 0.4s ease;
+            border: 1px solid #E8E8E8;
+            overflow: hidden;
+            position: relative;
+        }
+        .dark .offer-card {
+            background: #1A2A3A;
+            border-color: #2A3A4A;
+        }
+        .offer-card:hover {
+            transform: translateY(-8px);
+            border-color: #FF6B6B;
+            box-shadow: 0 25px 40px -15px rgba(255, 107, 107, 0.25);
+        }
+        .offer-card .discount-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: #FF6B6B;
+            color: white;
+        }
+        .offer-card .discount-badge.gold {
+            background: #FFD93D;
+            color: #0F0E17;
+        }
+        .offer-card .discount-badge.green {
+            background: #6BCB77;
+            color: white;
+        }
+        .offer-card .discount-badge.purple {
+            background: #6C3CE1;
+            color: white;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B6B, #FFD93D);
+            color: #0F0E17;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-primary:hover { transform: scale(1.03); box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4); }
+        .btn-outline {
+            border: 2px solid #FF6B6B;
+            background: transparent;
+            color: #FF6B6B;
+            padding: 0.75rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn-outline:hover { background: #FF6B6B; color: #0F0E17; }
+
+        .social-icon {
+            width: 40px; height: 40px;
+            background: rgba(255,255,255,0.06);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            transition: all 0.3s;
+            color: #FF6B6B;
+            border: 1px solid rgba(255, 107, 107, 0.2);
+            text-decoration: none;
+        }
+        .dark .social-icon { background: rgba(255,255,255,0.03); }
+        .social-icon:hover { background: #FF6B6B !important; color: #0F0E17; transform: translateY(-3px); }
+
+        section {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-3xl {
+            width: 100%;
+            max-width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 640px) {
+            .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-3xl {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .px-6 { padding-left: 16px; padding-right: 16px; }
+        }
+
+        @media (max-width: 480px) {
+            .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-3xl {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+            .px-6 { padding-left: 12px; padding-right: 12px; }
+        }
+
+        @media (max-width: 360px) {
+            .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-3xl {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .px-6 { padding-left: 8px; padding-right: 8px; }
+        }
+
+        @media (max-width: 430px) {
+            .section-title { font-size: 1.8rem !important; }
+            .offer-card { border-radius: 18px; padding: 1.2rem !important; }
+            .btn-primary, .btn-outline { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
+        }
+        @media (max-width: 360px) {
+            .section-title { font-size: 1.5rem !important; }
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-phone-dark text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar-wrapper" id="navbarWrapper">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo-wrapper">
+                <div class="logo-icon"><i class="fas fa-mobile-alt"></i></div>
+                <div>
+                    <span class="logo-text">Phone<span class="highlight">Hub</span></span>
+                    <span class="logo-sub">Mobile &amp; Accessories</span>
+                </div>
+            </a>
+
+            <div class="desktop-nav">
+                <div class="dropdown-wrapper keep">
+                    <span class="nav-link">Home <i class="fas fa-chevron-down text-[8px] ml-0.5 opacity-60"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1</a>
+                        <a href="home2.html" class="dropdown-item">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="smartphones.html" class="nav-link">Smartphones</a>
+                <a href="accessories.html" class="nav-link">Accessories</a>
+                <a href="brands.html" class="nav-link">Brands</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="offers.html" class="nav-link active">Offers</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="btn-icon-rounded" title="RTL">⇄</button>
+                <button id="theme-toggle" class="btn-icon-rounded" title="Theme"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                <div class="auth-toggle-wrapper" id="authToggleWrapper">
+                    <button class="auth-toggle-btn" id="authToggleBtn" title="Account">
+                        <i class="fas fa-user-circle"></i>
+                    </button>
+                    <div class="auth-dropdown" id="authDropdown">
+                        <a href="login.html" class="auth-dropdown-item">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span class="item-label">Log In</span>
+                        </a>
+                        <div class="auth-dropdown-divider"></div>
+                        <a href="signup.html" class="auth-dropdown-item">
+                            <i class="fas fa-user-plus"></i>
+                            <span class="item-label">Sign Up</span>
+                        </a>
+                    </div>
+                </div>
+                <button id="mobile-toggle" class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-btn flex justify-between items-center w-full mobile-menu-item">
+                    Home <i class="fas fa-chevron-down text-xs opacity-60"></i>
+                </button>
+                <div class="mobile-dropdown-content show">
+                    <a href="index.html" class="mobile-dropdown-item">Home 1</a>
+                    <a href="home2.html" class="mobile-dropdown-item">Home 2</a>
+                </div>
+            </div>
+            <a href="about.html" class="mobile-menu-item">About</a>
+            <a href="services.html" class="mobile-menu-item">Services</a>
+            <a href="smartphones.html" class="mobile-menu-item">Smartphones</a>
+            <a href="accessories.html" class="mobile-menu-item">Accessories</a>
+            <a href="brands.html" class="mobile-menu-item">Brands</a>
+            <a href="gallery.html" class="mobile-menu-item">Gallery</a>
+            <a href="offers.html" class="mobile-menu-item active">Offers</a>
+            <a href="contact.html" class="mobile-menu-item">Contact</a>
+            <div class="mobile-actions">
+                <button id="theme-toggle-mobile" class="btn-mobile-action">
+                    <i class="fas fa-moon"></i> <span>Dark Mode</span>
+                </button>
+                <button id="rtl-toggle-mobile" class="btn-mobile-action">
+                    <i class="fas fa-align-right"></i> <span>RTL</span>
+                </button>
+                <a href="login.html" class="btn-mobile-action">
+                    <i class="fas fa-sign-in-alt"></i> <span>Log In</span>
+                </a>
+                <a href="signup.html" class="btn-mobile-action">
+                    <i class="fas fa-user-plus"></i> <span>Sign Up</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== SECTION 1: HERO / PAGE HEADER ===== -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-br from-phone-primary via-phone-secondary to-phone-primary w-full">
+        <div class="absolute inset-0 z-0 w-full">
+            <div class="w-full h-full bg-[url('')] bg-cover bg-center opacity-8"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-phone-primary/30 to-phone-primary/90"></div>
+        </div>
+        <div class="absolute inset-0 pointer-events-none opacity-10">
+            <div class="absolute top-1/4 left-10 floating text-phone-accent"><i class="fas fa-tag fa-4x"></i></div>
+            <div class="absolute bottom-1/4 right-10 floating text-phone-accent2" style="animation-delay: 2s;"><i class="fas fa-gift fa-3x"></i></div>
+        </div>
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center w-full">
+            <span class="inline-block text-phone-accent font-bold tracking-[0.2em] uppercase text-xs sm:text-sm mb-4 border border-phone-accent/30 px-5 py-2 rounded-full backdrop-blur-sm">Hot Deals</span>
+            <h1 class="font-serif text-4xl sm:text-5xl md:text-7xl text-white leading-[1.1] font-medium mb-6">
+                Exclusive <span class="italic text-phone-accent">Offers</span> &amp; Deals
+            </h1>
+            <p class="text-gray-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                Don't miss out on our limited-time offers, flash sales, and exclusive discounts on premium smartphones and accessories.
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <a href="#deals" class="btn-primary"><i class="fas fa-tag"></i> Shop Deals</a>
+                <a href="#flash-sale" class="btn-outline border-white text-white hover:bg-white hover:text-phone-primary"><i class="fas fa-bolt"></i> Flash Sale</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2: FEATURED DEALS / OFFERS ===== -->
+    <!-- ===== SECTION: HOT DEALS ===== -->
+    <section id="deals" class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-phone-dark/80 transition-colors duration-300 w-full">
+        <div class="max-w-7xl mx-auto w-full">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-12 sm:mb-16">
+                <div class="inline-flex items-center gap-2 mb-2">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                    </span>
+                    <span class="text-red-500 font-bold uppercase tracking-widest text-xs sm:text-sm">Hot Deals</span>
+                </div>
+                <h2 class="section-title font-serif text-3xl sm:text-4xl md:text-5xl text-gray-900 dark:text-white font-black mt-2 tracking-tight">Limited <span class="italic text-phone-accent2 font-light">Offers</span></h2>
+                <div class="w-16 sm:w-20 h-1 bg-gradient-to-r from-red-500 to-phone-accent2 mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-4 text-sm sm:text-base">Grab these exclusive discounts before the timer runs out!</p>
+            </div>
+
+            <!-- Deals Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                
+                <!-- Deal 1 -->
+                <div class="relative group bg-white dark:bg-gray-800/80 rounded-3xl p-4 sm:p-5 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-700/50 hover:-translate-y-2 flex flex-col backdrop-blur-sm">
+                    
+                    <!-- Image Area with Hover Overlay -->
+                    <div class="relative w-full h-48 sm:h-60 rounded-2xl overflow-hidden mb-5 shadow-inner">
+                        <!-- Badges -->
+                        <div class="absolute top-3 left-3 z-20">
+                            <span class="bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold px-3 py-1.5 rounded-full text-xs shadow-lg tracking-wide border border-white/20 backdrop-blur-md">
+                                -30% OFF
+                            </span>
+                        </div>
+                        
+                        <img src="assests/15pro.jpg" alt="iPhone 15 Pro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
+                        
+                        <!-- Hover Timer Bar -->
+                        <div class="absolute bottom-0 left-0 w-full bg-white/20 backdrop-blur-md border-t border-white/20 py-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-20 flex justify-center items-center gap-2 text-white text-xs font-bold tracking-wider">
+                            <i class="fas fa-stopwatch animate-pulse"></i> Ends in: 12h 45m 30s
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="flex flex-col flex-grow px-1">
+                        <div class="flex justify-between items-start mb-2 gap-2">
+                            <div>
+                                <h4 class="font-bold text-lg sm:text-xl text-gray-900 dark:text-white group-hover:text-red-500 transition-colors line-clamp-1">iPhone 15 Pro</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">128GB · Titanium</p>
+                            </div>
+                            <div class="flex items-center gap-1 bg-gray-50 dark:bg-gray-900/50 px-2.5 py-1 rounded-lg border border-gray-100 dark:border-gray-700/50 shrink-0">
+                                <i class="fas fa-star text-yellow-400 text-[10px]"></i>
+                                <span class="text-gray-700 dark:text-gray-300 font-bold text-xs">4.9</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Progress Bar (Stock) -->
+                        <div class="mt-2 mb-4">
+                            <div class="flex justify-between text-[10px] text-gray-500 dark:text-gray-400 mb-1 font-medium">
+                                <span>85% Claimed</span>
+                                <span>Only 12 left</span>
+                            </div>
+                            <div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-gradient-to-r from-red-500 to-pink-500 h-1.5 rounded-full w-[85%]"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pricing & Action -->
+                        <div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700/50 flex justify-between items-end">
+                            <div class="flex flex-col">
+                                <span class="text-xs font-bold text-red-500 mb-0.5">Save $330</span>
+                                <div class="flex items-end gap-2 leading-none">
+                                    <span class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white">$769</span>
+                                    <span class="text-sm text-gray-400 line-through mb-1">$1,099</span>
+                                </div>
+                            </div>
+                            <a href="#" class="h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-900 dark:text-white group-hover:bg-red-500 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-red-500/30 hover:scale-105">
+                                <i class="fas fa-shopping-bag text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deal 2 -->
+                <div class="relative group bg-white dark:bg-gray-800/80 rounded-3xl p-4 sm:p-5 shadow-lg hover:shadow-2xl transition-all duration-500 border border-phone-accent2/30 hover:border-phone-accent2 dark:hover:border-phone-accent2 hover:-translate-y-2 flex flex-col backdrop-blur-sm">
+                    
+                    <!-- Image Area with Hover Overlay -->
+                    <div class="relative w-full h-48 sm:h-60 rounded-2xl overflow-hidden mb-5 shadow-inner">
+                        <!-- Badges -->
+                        <div class="absolute top-3 left-3 z-20 flex flex-col gap-1.5">
+                            <span class="bg-gradient-to-r from-phone-accent2 to-blue-500 text-white font-bold px-3 py-1.5 rounded-full text-xs shadow-lg tracking-wide border border-white/20 backdrop-blur-md">
+                                -40% OFF
+                            </span>
+                            <span class="bg-gray-900/90 text-white font-bold px-3 py-1 rounded-full text-[10px] uppercase tracking-wider backdrop-blur-md border border-gray-700 w-max">
+                                Best Deal
+                            </span>
+                        </div>
+                        
+                        <img src="https://newsroundtheclock.com/wp-content/uploads/2024/01/Snapinsta.app_419315118_333308072944294_6346914643744631820_n_1080-768x953.jpg" alt="Samsung Galaxy S24" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
+                        
+                        <!-- Hover Timer Bar -->
+                        <div class="absolute bottom-0 left-0 w-full bg-white/20 backdrop-blur-md border-t border-white/20 py-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-20 flex justify-center items-center gap-2 text-white text-xs font-bold tracking-wider">
+                            <i class="fas fa-stopwatch animate-pulse"></i> Ends in: 04h 12m 09s
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="flex flex-col flex-grow px-1">
+                        <div class="flex justify-between items-start mb-2 gap-2">
+                            <div>
+                                <h4 class="font-bold text-lg sm:text-xl text-gray-900 dark:text-white group-hover:text-phone-accent2 transition-colors line-clamp-1">Galaxy S24 Ultra</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">256GB · Phantom Black</p>
+                            </div>
+                            <div class="flex items-center gap-1 bg-gray-50 dark:bg-gray-900/50 px-2.5 py-1 rounded-lg border border-gray-100 dark:border-gray-700/50 shrink-0">
+                                <i class="fas fa-star text-yellow-400 text-[10px]"></i>
+                                <span class="text-gray-700 dark:text-gray-300 font-bold text-xs">4.8</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Progress Bar (Stock) -->
+                        <div class="mt-2 mb-4">
+                            <div class="flex justify-between text-[10px] text-gray-500 dark:text-gray-400 mb-1 font-medium">
+                                <span>92% Claimed</span>
+                                <span>Only 4 left</span>
+                            </div>
+                            <div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-gradient-to-r from-phone-accent2 to-blue-500 h-1.5 rounded-full w-[92%]"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pricing & Action -->
+                        <div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700/50 flex justify-between items-end">
+                            <div class="flex flex-col">
+                                <span class="text-xs font-bold text-phone-accent2 mb-0.5">Save $480</span>
+                                <div class="flex items-end gap-2 leading-none">
+                                    <span class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white">$719</span>
+                                    <span class="text-sm text-gray-400 line-through mb-1">$1,199</span>
+                                </div>
+                            </div>
+                            <a href="#" class="h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-900 dark:text-white group-hover:bg-phone-accent2 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-phone-accent2/30 hover:scale-105">
+                                <i class="fas fa-shopping-bag text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deal 3 -->
+                <div class="relative group bg-white dark:bg-gray-800/80 rounded-3xl p-4 sm:p-5 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-700/50 hover:-translate-y-2 flex flex-col backdrop-blur-sm md:col-span-2 lg:col-span-1">
+                    
+                    <!-- Image Area with Hover Overlay -->
+                    <div class="relative w-full h-48 sm:h-60 rounded-2xl overflow-hidden mb-5 shadow-inner">
+                        <!-- Badges -->
+                        <div class="absolute top-3 left-3 z-20">
+                            <span class="bg-gradient-to-r from-phone-accent3 to-purple-500 text-white font-bold px-3 py-1.5 rounded-full text-xs shadow-lg tracking-wide border border-white/20 backdrop-blur-md">
+                                -25% OFF
+                            </span>
+                        </div>
+                        
+                        <img src="assests/gallery12.jpg" alt="Sony WH-1000XM5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500 z-10"></div>
+                        
+                        <!-- Hover Timer Bar -->
+                        <div class="absolute bottom-0 left-0 w-full bg-white/20 backdrop-blur-md border-t border-white/20 py-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-20 flex justify-center items-center gap-2 text-white text-xs font-bold tracking-wider">
+                            <i class="fas fa-stopwatch animate-pulse"></i> Ends in: 22h 10m 00s
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="flex flex-col flex-grow px-1">
+                        <div class="flex justify-between items-start mb-2 gap-2">
+                            <div>
+                                <h4 class="font-bold text-lg sm:text-xl text-gray-900 dark:text-white group-hover:text-phone-accent3 transition-colors line-clamp-1">Sony WH-1000XM5</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Noise Cancelling · Black</p>
+                            </div>
+                            <div class="flex items-center gap-1 bg-gray-50 dark:bg-gray-900/50 px-2.5 py-1 rounded-lg border border-gray-100 dark:border-gray-700/50 shrink-0">
+                                <i class="fas fa-star text-yellow-400 text-[10px]"></i>
+                                <span class="text-gray-700 dark:text-gray-300 font-bold text-xs">5.0</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Progress Bar (Stock) -->
+                        <div class="mt-2 mb-4">
+                            <div class="flex justify-between text-[10px] text-gray-500 dark:text-gray-400 mb-1 font-medium">
+                                <span>65% Claimed</span>
+                                <span>In Stock</span>
+                            </div>
+                            <div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-gradient-to-r from-phone-accent3 to-purple-500 h-1.5 rounded-full w-[65%]"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pricing & Action -->
+                        <div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700/50 flex justify-between items-end">
+                            <div class="flex flex-col">
+                                <span class="text-xs font-bold text-phone-accent3 mb-0.5">Save $87</span>
+                                <div class="flex items-end gap-2 leading-none">
+                                    <span class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white">$262</span>
+                                    <span class="text-sm text-gray-400 line-through mb-1">$349</span>
+                                </div>
+                            </div>
+                            <a href="#" class="h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-900 dark:text-white group-hover:bg-phone-accent3 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-phone-accent3/30 hover:scale-105">
+                                <i class="fas fa-shopping-bag text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ===== SECTION 3: FLASH SALE ===== -->
+    <section id="flash-sale" class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-gradient-to-br from-phone-primary via-phone-secondary to-phone-primary text-white w-full">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="text-center mb-12 sm:mb-16">
+                <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Flash Sale</span>
+                <h2 class="section-title font-serif text-3xl sm:text-4xl md:text-5xl font-bold mt-2"><span class="italic text-phone-accent2">⚡ Flash</span> Sale ⚡</h2>
+                <div class="w-16 sm:w-20 h-1.5 bg-phone-accent mx-auto mt-3 sm:mt-4 rounded-full"></div>
+                <p class="text-gray-300 max-w-2xl mx-auto mt-3 sm:mt-4 text-sm sm:text-base">Hurry! These deals won't last long. Limited stock available.</p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center border border-white/10 hover:border-phone-accent/40 transition-all">
+                    <div class="text-2xl sm:text-3xl text-phone-accent font-bold">50%</div>
+                    <div class="text-xs sm:text-sm text-gray-300">Smartwatch Cases</div>
+                    <div class="mt-2 text-xs text-gray-400">Limited Time</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center border border-white/10 hover:border-phone-accent2/40 transition-all">
+                    <div class="text-2xl sm:text-3xl text-phone-accent2 font-bold">40%</div>
+                    <div class="text-xs sm:text-sm text-gray-300">Wireless Earbuds</div>
+                    <div class="mt-2 text-xs text-gray-400">Today Only</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center border border-white/10 hover:border-phone-accent3/40 transition-all">
+                    <div class="text-2xl sm:text-3xl text-phone-accent3 font-bold">35%</div>
+                    <div class="text-xs sm:text-sm text-gray-300">Power Banks</div>
+                    <div class="mt-2 text-xs text-gray-400">While Stocks Last</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center border border-white/10 hover:border-phone-purple/40 transition-all">
+                    <div class="text-2xl sm:text-3xl text-phone-purple font-bold">60%</div>
+                    <div class="text-xs sm:text-sm text-gray-300">Phone Cases</div>
+                    <div class="mt-2 text-xs text-gray-400">Clearance Sale</div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#" class="btn-primary bg-gradient-to-r from-phone-accent to-phone-accent2 text-phone-primary hover:shadow-xl text-sm sm:text-base"><i class="fas fa-bolt"></i> Shop Flash Sale</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 4: BUNDLE DEALS ===== -->
+    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark transition-colors duration-300 w-full">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="text-center mb-12 sm:mb-16">
+                <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Bundle &amp; Save</span>
+                <h2 class="section-title font-serif text-3xl sm:text-4xl md:text-5xl text-gray-900 dark:text-white font-bold mt-2">Value <span class="italic text-phone-accent2">Bundles</span></h2>
+                <div class="w-16 sm:w-20 h-1.5 bg-phone-accent mx-auto mt-3 sm:mt-4 rounded-full"></div>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-3 sm:mt-4 text-sm sm:text-base">Get more for less with our curated bundles.</p>
+            </div>
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Bundle 1 -->
+                <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-phone-primary to-black text-white p-1 group shadow-2xl">
+                    <!-- Inner glowing border -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-phone-accent to-phone-accent2 opacity-30 group-hover:opacity-70 blur-xl transition-opacity duration-700"></div>
+                    
+                    <div class="relative h-full flex flex-col md:flex-row bg-gray-950/90 backdrop-blur-2xl rounded-[1.8rem] overflow-hidden border border-white/10">
+                        <!-- Left Side: Visual Showcase -->
+                        <div class="md:w-5/12 p-8 relative flex flex-col items-center justify-center bg-white/5 border-b md:border-b-0 md:border-r border-white/5 min-h-[250px]">
+                            <span class="absolute top-5 left-5 bg-gradient-to-r from-phone-accent to-phone-accent2 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg shadow-phone-accent/20 z-40">Save 25%</span>
+                            
+                            <div class="relative w-full h-full flex items-center justify-center mt-6">
+                                <!-- Image 1 (Left) -->
+                                <div class="absolute w-24 h-32 sm:w-28 sm:h-36 rounded-2xl shadow-2xl -translate-x-12 -translate-y-4 -rotate-12 border-2 border-white/20 z-10 hover:z-30 hover:scale-110 transition-all duration-500 overflow-hidden">
+                                    <img src="assests/15pro.jpg" class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-black/20 hover:bg-transparent transition-colors"></div>
+                                </div>
+                                <!-- Image 2 (Center) -->
+                                <div class="absolute w-28 h-36 sm:w-32 sm:h-40 rounded-2xl shadow-2xl z-20 hover:scale-110 transition-all duration-500 border-2 border-white/20 overflow-hidden">
+                                    <img src="assests/gallery14.jpg"w-full h-full object-cover">
+                                </div>
+                                <!-- Image 3 (Right) -->
+                                <div class="absolute w-24 h-32 sm:w-28 sm:h-36 rounded-2xl shadow-2xl translate-x-12 translate-y-6 rotate-12 border-2 border-white/20 z-10 hover:z-30 hover:scale-110 transition-all duration-500 overflow-hidden">
+                                    <img src="assests/h2.jpg" class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-black/20 hover:bg-transparent transition-colors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Side: Details -->
+                        <div class="md:w-7/12 p-6 sm:p-8 flex flex-col justify-center">
+                            <h4 class="text-2xl sm:text-3xl font-bold mb-4 font-serif italic tracking-wide">The Pro Ecosystem</h4>
+                            <ul class="text-gray-400 text-sm space-y-3 mb-8">
+                                <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-phone-accent/20 flex items-center justify-center"><i class="fas fa-check text-phone-accent text-[10px]"></i></div> iPhone 15 Pro Max (256GB)</li>
+                                <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-phone-accent/20 flex items-center justify-center"><i class="fas fa-check text-phone-accent text-[10px]"></i></div> Sony WH-1000XM5 Headphones</li>
+                                <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-phone-accent/20 flex items-center justify-center"><i class="fas fa-check text-phone-accent text-[10px]"></i></div> AirPods Pro 3</li>
+                            </ul>
+                            
+                            <div class="mt-auto flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+                                <div>
+                                    <div class="text-xs text-gray-500 mb-1 uppercase tracking-widest font-bold">Bundle Price</div>
+                                    <div class="flex items-end gap-3">
+                                        <span class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">$1,299</span>
+                                        <span class="text-lg text-gray-600 line-through decoration-gray-600/50 pb-1">$1,699</span>
+                                    </div>
+                                </div>
+                                
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bundle 2 -->
+                <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-phone-primary to-black text-white p-1 group shadow-2xl">
+                    <!-- Inner glowing border -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-phone-purple to-phone-accent2 opacity-30 group-hover:opacity-70 blur-xl transition-opacity duration-700"></div>
+                    
+                    <div class="relative h-full flex flex-col md:flex-row bg-gray-950/90 backdrop-blur-2xl rounded-[1.8rem] overflow-hidden border border-white/10">
+                        <!-- Left Side: Visual Showcase -->
+                        <div class="md:w-5/12 p-8 relative flex flex-col items-center justify-center bg-white/5 border-b md:border-b-0 md:border-r border-white/5 min-h-[250px]">
+                            <span class="absolute top-5 left-5 bg-gradient-to-r from-phone-purple to-phone-accent2 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg shadow-phone-purple/20 z-40">Save 30%</span>
+                            
+                            <div class="relative w-full h-full flex items-center justify-center mt-6">
+                                <!-- Image 1 (Left) -->
+                                <div class="absolute w-24 h-32 sm:w-28 sm:h-36 rounded-2xl shadow-2xl -translate-x-12 -translate-y-4 -rotate-12 border-2 border-white/20 z-10 hover:z-30 hover:scale-110 transition-all duration-500 overflow-hidden">
+                                    <img src="assests/galley4.jpg" class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-black/20 hover:bg-transparent transition-colors"></div>
+                                </div>
+                                <!-- Image 2 (Center) -->
+                                <div class="absolute w-28 h-36 sm:w-32 sm:h-40 rounded-2xl shadow-2xl z-20 hover:scale-110 transition-all duration-500 border-2 border-white/20 overflow-hidden">
+                                    <img src="https://avatars.mds.yandex.net/i?id=cd3aafd496fbc6fa40ab1320c1be8937f74e66b5-5865527-images-thumbs&n=13" class="w-full h-full object-cover">
+                                </div>
+                                <!-- Image 3 (Right) -->
+                                <div class="absolute w-24 h-32 sm:w-28 sm:h-36 rounded-2xl shadow-2xl translate-x-12 translate-y-6 rotate-12 border-2 border-white/20 z-10 hover:z-30 hover:scale-110 transition-all duration-500 overflow-hidden">
+                                    <img src="assests/acc4.jpg" class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-black/20 hover:bg-transparent transition-colors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Side: Details -->
+                        <div class="md:w-7/12 p-6 sm:p-8 flex flex-col justify-center">
+                            <h4 class="text-2xl sm:text-3xl font-bold mb-4 font-serif italic tracking-wide">Active Lifestyle</h4>
+                            <ul class="text-gray-400 text-sm space-y-3 mb-8">
+                                <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-phone-purple/20 flex items-center justify-center"><i class="fas fa-check text-phone-purple text-[10px]"></i></div> Apple Watch Ultra 2</li>
+                                <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-phone-purple/20 flex items-center justify-center"><i class="fas fa-check text-phone-purple text-[10px]"></i></div> Powerbeats Pro Wireless</li>
+                                <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-phone-purple/20 flex items-center justify-center"><i class="fas fa-check text-phone-purple text-[10px]"></i></div> Rugged Silicone Case</li>
+                            </ul>
+                            
+                            <div class="mt-auto flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+                                <div>
+                                    <div class="text-xs text-gray-500 mb-1 uppercase tracking-widest font-bold">Bundle Price</div>
+                                    <div class="flex items-end gap-3">
+                                        <span class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">$849</span>
+                                        <span class="text-lg text-gray-600 line-through decoration-gray-600/50 pb-1">$1,150</span>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 5: DEAL STATS / COUNTDOWN ===== -->
+    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-phone-dark/80 transition-colors duration-300 w-full">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="text-center mb-12 sm:mb-16">
+                <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Hurry Up!</span>
+                <h2 class="section-title font-serif text-3xl sm:text-4xl md:text-5xl text-gray-900 dark:text-white font-bold mt-2">Deal <span class="italic text-phone-accent2">Countdown</span></h2>
+                <div class="w-16 sm:w-20 h-1.5 bg-phone-accent mx-auto mt-3 sm:mt-4 rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto">
+                <div class="bg-white dark:bg-phone-dark rounded-2xl p-4 sm:p-6 text-center border border-phone-accent/10 shadow-lg">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-phone-accent" id="days">12</div>
+                    <div class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Days</div>
+                </div>
+                <div class="bg-white dark:bg-phone-dark rounded-2xl p-4 sm:p-6 text-center border border-phone-accent2/10 shadow-lg">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-phone-accent2" id="hours">08</div>
+                    <div class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Hours</div>
+                </div>
+                <div class="bg-white dark:bg-phone-dark rounded-2xl p-4 sm:p-6 text-center border border-phone-accent3/10 shadow-lg">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-phone-accent3" id="minutes">45</div>
+                    <div class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Minutes</div>
+                </div>
+                <div class="bg-white dark:bg-phone-dark rounded-2xl p-4 sm:p-6 text-center border border-phone-purple/10 shadow-lg">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-phone-purple" id="seconds">30</div>
+                    <div class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 6: CTA / SHOP ===== -->
+    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark transition-colors duration-300 w-full">
+        <div class="max-w-6xl mx-auto w-full">
+            <div class="bg-gradient-to-br from-phone-light to-phone-accent/5 dark:from-phone-dark dark:to-phone-accent/5 rounded-[2.5rem] p-8 sm:p-12 md:p-16 shadow-2xl border border-phone-accent/10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div>
+                        <span class="text-phone-accent font-bold tracking-[0.2em] uppercase text-xs sm:text-sm mb-4 block">Don't Miss Out</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-gray-900 dark:text-white font-bold leading-tight mb-4">
+                            Save <span class="italic text-phone-accent">Big</span> Today!
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed mb-6">
+                            Shop our exclusive deals and offers before they expire. Sign up for our newsletter to get early access to future sales.
+                        </p>
+                        <div class="flex flex-wrap gap-3 sm:gap-4">
+                            <a href="#deals" class="btn-primary"><i class="fas fa-tag"></i> Shop Deals</a>
+                            <a href="contact.html" class="btn-outline"><i class="fas fa-bell"></i> Get Alerts</a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                        <div class="bg-white dark:bg-phone-dark rounded-2xl p-3 sm:p-4 text-center shadow-lg border border-phone-accent/10">
+                            <i class="fas fa-check-circle text-phone-accent text-2xl sm:text-3xl block mb-1 sm:mb-2"></i>
+                            <span class="text-xs sm:text-sm font-bold block">Free Shipping</span>
+                            <span class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">On All Orders</span>
+                        </div>
+                        <div class="bg-white dark:bg-phone-dark rounded-2xl p-3 sm:p-4 text-center shadow-lg border border-phone-accent2/10">
+                            <i class="fas fa-check-circle text-phone-accent2 text-2xl sm:text-3xl block mb-1 sm:mb-2"></i>
+                            <span class="text-xs sm:text-sm font-bold block">Price Match</span>
+                            <span class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Best Price Guarantee</span>
+                        </div>
+                        <div class="bg-white dark:bg-phone-dark rounded-2xl p-3 sm:p-4 text-center shadow-lg border border-phone-accent3/10">
+                            <i class="fas fa-check-circle text-phone-accent3 text-2xl sm:text-3xl block mb-1 sm:mb-2"></i>
+                            <span class="text-xs sm:text-sm font-bold block">Warranty</span>
+                            <span class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">1 Year Coverage</span>
+                        </div>
+                        <div class="bg-white dark:bg-phone-dark rounded-2xl p-3 sm:p-4 text-center shadow-lg border border-phone-purple/10">
+                            <i class="fas fa-check-circle text-phone-purple text-2xl sm:text-3xl block mb-1 sm:mb-2"></i>
+                            <span class="text-xs sm:text-sm font-bold block">Easy Returns</span>
+                            <span class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">30-Day Policy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="pt-12 sm:pt-16 pb-6 sm:pb-8 bg-black text-white w-full">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+                <div class="text-center sm:text-start">
+                    <a href="index.html" class="flex items-center gap-3 mb-4 sm:mb-6 justify-center sm:justify-start group">
+                        <div class="bg-gradient-to-br from-phone-accent to-phone-accent2 p-2 rounded-xl shadow-lg shadow-black/20"><i class="fas fa-mobile-alt text-xl sm:text-2xl text-phone-primary group-hover:scale-110 transition-transform"></i></div>
+                        <div class="flex flex-col text-left"><span class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-white drop-shadow-sm"><span class="text-white">Phone</span><span class="text-phone-accent">Hub</span></span><span class="text-[8px] tracking-[0.25em] uppercase text-white/80 font-semibold -mt-1">Mobile &amp; Accessories</span></div>
+                    </a>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">Your trusted destination for premium smartphones, accessories, and expert mobile advice since 2015.</p>
+                    <div class="flex gap-3 justify-center sm:justify-start"><a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-icon"><i class="fab fa-instagram"></i></a><a href="#" class="social-icon"><i class="fab fa-youtube"></i></a><a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a></div>
+                </div>
+                <div class="text-center sm:text-start"><h3 class="text-white text-lg sm:text-xl font-bold mb-3 sm:mb-5 footer-heading border-l-3 border-phone-accent pl-3">Quick Links</h3><ul class="space-y-2 text-gray-400 text-xs sm:text-sm"><li><a href="about.html" class="hover:text-phone-accent transition block">About Us</a></li><li><a href="services.html" class="hover:text-phone-accent transition block">Services</a></li><li><a href="smartphones.html" class="hover:text-phone-accent transition block">Smartphones</a></li><li><a href="contact.html" class="hover:text-phone-accent transition block">Contact</a></li></ul></div>
+                <div class="text-center sm:text-start"><h3 class="text-white text-lg sm:text-xl font-bold mb-3 sm:mb-5 footer-heading border-l-3 border-phone-accent2 pl-3">Categories</h3><ul class="space-y-2 text-gray-400 text-xs sm:text-sm"><li><a href="#" class="hover:text-phone-accent2 transition block">Smartphones</a></li><li><a href="#" class="hover:text-phone-accent2 transition block">Accessories</a></li><li><a href="#" class="hover:text-phone-accent2 transition block">Audio &amp; Wearables</a></li><li><a href="#" class="hover:text-phone-accent2 transition block">Chargers &amp; Cases</a></li></ul></div>
+                <div class="text-center sm:text-start"><h3 class="text-white text-lg sm:text-xl font-bold mb-3 sm:mb-5 footer-heading border-l-3 border-phone-accent3 pl-3">Contact</h3><ul class="space-y-3 text-gray-400 text-xs sm:text-sm"><li class="flex gap-2 justify-center sm:justify-start"><i class="fas fa-map-marker-alt text-phone-accent3 w-5"></i><span>123 Tech Avenue, Los Angeles, CA</span></li><li class="flex gap-2 justify-center sm:justify-start"><i class="fas fa-phone text-phone-accent3 w-5"></i><span>(888) 555-0123</span></li><li class="flex gap-2 justify-center sm:justify-start"><i class="fas fa-envelope text-phone-accent3 w-5"></i><span>info@phonehubstore.com</span></li></ul></div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center text-gray-500 text-[10px] sm:text-xs font-mono"><p>© 2026 PhoneHub — Premium Mobile Phones &amp; Accessories. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <!-- ===== COUNTDOWN TIMER ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbarWrapper');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 20) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Countdown Timer
+            let countdownDate = new Date();
+            countdownDate.setDate(countdownDate.getDate() + 12);
+            countdownDate.setHours(8, 45, 30);
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = countdownDate.getTime() - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            const authToggleBtn = document.getElementById('authToggleBtn');
+            const authDropdown = document.getElementById('authDropdown');
+            const authWrapper = document.getElementById('authToggleWrapper');
+
+            if (authToggleBtn && authDropdown) {
+                authToggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    authDropdown.classList.toggle('active');
+                });
+                document.addEventListener('click', (e) => {
+                    if (!authWrapper.contains(e.target)) {
+                        authDropdown.classList.remove('active');
+                    }
+                });
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        authDropdown.classList.remove('active');
+                    }
+                });
+            }
+
+            const themeBtn = document.getElementById('theme-toggle');
+            const themeMob = document.getElementById('theme-toggle-mobile');
+            const updateThemeUI = (dark) => {
+                [themeBtn, themeMob].forEach(b => {
+                    if (b) {
+                        const moon = b.querySelector('.fa-moon');
+                        const sun = b.querySelector('.fa-sun');
+                        if (dark) { moon?.classList.add('hidden'); sun?.classList.remove('hidden'); }
+                        else { moon?.classList.remove('hidden'); sun?.classList.add('hidden'); }
+                    }
+                });
+            };
+            const toggleTheme = () => {
+                document.documentElement.classList.toggle('dark');
+                const isDark = document.documentElement.classList.contains('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                updateThemeUI(isDark);
+            };
+            if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+            if (themeMob) themeMob.addEventListener('click', toggleTheme);
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+                updateThemeUI(true);
+            }
+
+            const rtlBtn = document.getElementById('rtl-toggle');
+            const rtlMob = document.getElementById('rtl-toggle-mobile');
+            const updateRtlUI = (isRtl) => {
+                document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+                [rtlBtn, rtlMob].forEach(b => b && b.classList.toggle('active', isRtl));
+            };
+            const toggleRtl = () => {
+                const isRtl = document.documentElement.dir !== 'rtl';
+                localStorage.setItem('dir', isRtl ? 'rtl' : 'ltr');
+                updateRtlUI(isRtl);
+            };
+            if (rtlBtn) rtlBtn.addEventListener('click', toggleRtl);
+            if (rtlMob) rtlMob.addEventListener('click', toggleRtl);
+            if (localStorage.getItem('dir') === 'rtl') updateRtlUI(true);
+
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const icon = mobileToggle?.querySelector('i');
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('open');
+                    icon?.classList.toggle('fa-bars');
+                    icon?.classList.toggle('fa-times');
+                    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+                });
+            }
+
+            document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    content.classList.toggle('show');
+                    const chev = btn.querySelector('.fa-chevron-down');
+                    if (chev) {
+                        chev.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
+                    }
+                });
+            });
+
+            const reveals = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            }, { threshold: 0.15 });
+            reveals.forEach(el => revealObserver.observe(el));
+        });
+    </script>
+</body>
+</html>
