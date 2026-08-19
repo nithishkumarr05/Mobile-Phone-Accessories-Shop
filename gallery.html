@@ -27,7 +27,8 @@
                         'phone-accent3': '#6BCB77',
                         'phone-purple': '#6C3CE1',
                         'phone-light': '#F5F5F5',
-                        'phone-dark': '#0D0D1A',
+                        'phone-dark': '#000000',
+                        'phone-dark-alt': '#0A0A0A',
                     }
                 }
             }
@@ -73,7 +74,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
         }
         .dark .navbar-wrapper.scrolled {
-            background: rgba(13, 13, 26, 0.96);
+            background: rgba(0, 0, 0, 0.96);
         }
 
         .navbar-inner {
@@ -170,7 +171,7 @@
             border: 1px solid rgba(255, 107, 107, 0.15);
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
         }
-        .dark .dropdown-menu { background: rgba(13, 13, 26, 0.96); }
+        .dark .dropdown-menu { background: rgba(0, 0, 0, 0.96); }
         .dropdown-wrapper:hover .dropdown-menu,
         .dropdown-wrapper.open .dropdown-menu {
             opacity: 1;
@@ -258,7 +259,7 @@
             border: 1px solid rgba(255, 107, 107, 0.15);
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
         }
-        .dark .auth-dropdown { background: rgba(13, 13, 26, 0.96); }
+        .dark .auth-dropdown { background: rgba(0, 0, 0, 0.96); }
         .auth-dropdown.active {
             opacity: 1;
             visibility: visible;
@@ -600,7 +601,7 @@
         }
     </style>
 </head>
-<body class="bg-white dark:bg-phone-dark text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
+<body class="bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
 
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar-wrapper" id="navbarWrapper">
@@ -715,7 +716,7 @@
     </section>
 
     <!-- ===== SECTION 2: GALLERY GRID (12 Images) ===== -->
-    <section id="gallery-grid" class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark transition-colors duration-300 w-full">
+    <section id="gallery-grid" class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark-alt transition-colors duration-300 w-full">
         <div class="max-w-7xl mx-auto w-full">
             <div class="text-center mb-12 sm:mb-16">
                 <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Gallery</span>
@@ -848,7 +849,7 @@
     </section>
 
     <!-- ===== SECTION 3: FEATURED GALLERY ===== -->
-    <section id="featured" class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-phone-dark/80 transition-colors duration-300 w-full">
+    <section id="featured" class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-phone-dark-alt transition-colors duration-300 w-full">
         <div class="max-w-7xl mx-auto w-full">
             <div class="text-center mb-12 sm:mb-16">
                 <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Featured</span>
@@ -909,7 +910,7 @@
     </section>
 
     <!-- ===== SECTION 4: INSTAGRAM STYLE GRID ===== -->
-    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark transition-colors duration-300 w-full">
+    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark-alt transition-colors duration-300 w-full">
         <div class="max-w-7xl mx-auto w-full">
             <div class="text-center mb-12 sm:mb-16">
                 <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Instagram</span>
@@ -975,7 +976,7 @@
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
                     <!-- Video Card 1 -->
-                    <div class="group relative aspect-[4/5] sm:aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer border border-white/10 sm:-translate-y-6">
+                    <div class="group relative aspect-[4/5] sm:aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer border border-white/10 ">
                         <img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=2081&auto=format&fit=crop" alt="Unboxing Thumbnail" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/90 group-hover:via-black/20 transition-colors duration-500"></div>
                         
@@ -1003,7 +1004,7 @@
                     </div>
                     
                     <!-- Video Card 2 -->
-                    <div class="group relative aspect-[4/5] sm:aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer border border-white/10 sm:translate-y-6">
+                    <div class="group relative aspect-[4/5] sm:aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer border border-white/10 ">
                         <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop" alt="Review Thumbnail" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/90 group-hover:via-black/20 transition-colors duration-500"></div>
                         
@@ -1034,7 +1035,7 @@
     </section>
 
     <!-- ===== SECTION 6: CTA / SHARE ===== -->
-    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark transition-colors duration-300 w-full">
+    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark-alt transition-colors duration-300 w-full">
         <div class="max-w-6xl mx-auto w-full">
             <div class="bg-gradient-to-br from-phone-light to-phone-accent/5 dark:from-phone-dark dark:to-phone-accent/5 rounded-[2.5rem] p-8 sm:p-12 md:p-16 shadow-2xl border border-phone-accent/10">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -1052,22 +1053,22 @@
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 sm:gap-4 lg:gap-5">
-                        <div class="bg-white dark:bg-phone-dark rounded-xl sm:rounded-2xl p-3 sm:p-5 text-center shadow-lg border border-phone-accent/10 flex flex-col items-center justify-center h-full transition-transform hover:-translate-y-1">
+                        <div class="bg-white dark:bg-phone-dark-alt rounded-xl sm:rounded-2xl p-3 sm:p-5 text-center shadow-lg border border-phone-accent/10 flex flex-col items-center justify-center h-full transition-transform hover:-translate-y-1">
                             <i class="fas fa-check-circle text-phone-accent text-xl sm:text-3xl mb-1.5 sm:mb-3"></i>
                             <span class="text-[11px] min-[375px]:text-xs sm:text-base font-bold text-gray-900 dark:text-white mb-0.5 sm:mb-1 leading-tight whitespace-nowrap">Share Your Story</span>
                             <span class="text-[9px] min-[375px]:text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">Tag #PhoneHub</span>
                         </div>
-                        <div class="bg-white dark:bg-phone-dark rounded-xl sm:rounded-2xl p-3 sm:p-5 text-center shadow-lg border border-phone-accent2/10 flex flex-col items-center justify-center h-full transition-transform hover:-translate-y-1">
+                        <div class="bg-white dark:bg-phone-dark-alt rounded-xl sm:rounded-2xl p-3 sm:p-5 text-center shadow-lg border border-phone-accent2/10 flex flex-col items-center justify-center h-full transition-transform hover:-translate-y-1">
                             <i class="fas fa-check-circle text-phone-accent2 text-xl sm:text-3xl mb-1.5 sm:mb-3"></i>
                             <span class="text-[11px] min-[375px]:text-xs sm:text-base font-bold text-gray-900 dark:text-white mb-0.5 sm:mb-1 leading-tight whitespace-nowrap">Get Featured</span>
                             <span class="text-[9px] min-[375px]:text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">Be Our Star</span>
                         </div>
-                        <div class="bg-white dark:bg-phone-dark rounded-xl sm:rounded-2xl p-3 sm:p-5 text-center shadow-lg border border-phone-accent3/10 flex flex-col items-center justify-center h-full transition-transform hover:-translate-y-1">
+                        <div class="bg-white dark:bg-phone-dark-alt rounded-xl sm:rounded-2xl p-3 sm:p-5 text-center shadow-lg border border-phone-accent3/10 flex flex-col items-center justify-center h-full transition-transform hover:-translate-y-1">
                             <i class="fas fa-check-circle text-phone-accent3 text-xl sm:text-3xl mb-1.5 sm:mb-3"></i>
                             <span class="text-[11px] min-[375px]:text-xs sm:text-base font-bold text-gray-900 dark:text-white mb-0.5 sm:mb-1 leading-tight whitespace-nowrap">Connect</span>
                             <span class="text-[9px] min-[375px]:text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">Join Community</span>
                         </div>
-                        <div class="bg-white dark:bg-phone-dark rounded-xl sm:rounded-2xl p-3 sm:p-5 text-center shadow-lg border border-phone-purple/10 flex flex-col items-center justify-center h-full transition-transform hover:-translate-y-1">
+                        <div class="bg-white dark:bg-phone-dark-alt rounded-xl sm:rounded-2xl p-3 sm:p-5 text-center shadow-lg border border-phone-purple/10 flex flex-col items-center justify-center h-full transition-transform hover:-translate-y-1">
                             <i class="fas fa-check-circle text-phone-purple text-xl sm:text-3xl mb-1.5 sm:mb-3"></i>
                             <span class="text-[11px] min-[375px]:text-xs sm:text-base font-bold text-gray-900 dark:text-white mb-0.5 sm:mb-1 leading-tight whitespace-nowrap">Inspire</span>
                             <span class="text-[9px] min-[375px]:text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">Share Your Moment</span>

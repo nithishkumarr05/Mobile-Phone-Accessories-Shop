@@ -27,7 +27,8 @@
                         'phone-accent3': '#6BCB77',
                         'phone-purple': '#6C3CE1',
                         'phone-light': '#F5F5F5',
-                        'phone-dark': '#0D0D1A',
+                        'phone-dark': '#000000',
+                        'phone-dark-alt': '#0A0A0A',
                     }
                 }
             }
@@ -74,7 +75,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
         }
         .dark .navbar-wrapper.scrolled {
-            background: rgba(13, 13, 26, 0.96);
+            background: rgba(0, 0, 0, 0.96);
         }
 
         .navbar-inner {
@@ -174,7 +175,7 @@
             border: 1px solid rgba(255, 107, 107, 0.15);
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
         }
-        .dark .dropdown-menu { background: rgba(13, 13, 26, 0.96); }
+        .dark .dropdown-menu { background: rgba(0, 0, 0, 0.96); }
         .dropdown-wrapper:hover .dropdown-menu,
         .dropdown-wrapper.open .dropdown-menu {
             opacity: 1;
@@ -249,7 +250,7 @@
             border: 1px solid rgba(255, 107, 107, 0.15);
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
         }
-        .dark .auth-dropdown { background: rgba(13, 13, 26, 0.96); }
+        .dark .auth-dropdown { background: rgba(0, 0, 0, 0.96); }
         .auth-dropdown.active {
             opacity: 1;
             visibility: visible;
@@ -592,7 +593,7 @@
         }
     </style>
 </head>
-<body class="bg-white dark:bg-phone-dark text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
+<body class="bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
 
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar-wrapper" id="navbarWrapper">
@@ -721,155 +722,114 @@
             </div>
         </div>
     </section>
-
-    <!-- ===== SECTION 2: FEATURES ===== -->
-    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-phone-dark/80 transition-colors duration-300 w-full">
-        <div class="max-w-7xl mx-auto w-full">
-            <div class="text-center mb-12 sm:mb-16">
-                <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Why PhoneHub</span>
-                <h2 class="section-title font-serif text-3xl sm:text-4xl md:text-5xl text-gray-900 dark:text-white font-bold mt-2">Your <span class="italic text-phone-accent2">Trusted</span> Mobile Partner</h2>
-                <div class="w-16 sm:w-20 h-1.5 bg-phone-accent mx-auto mt-3 sm:mt-4 rounded-full"></div>
-                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-3 sm:mt-4 text-sm sm:text-base">Quality products, expert service, and unbeatable deals — everything you need for your mobile lifestyle.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <div class="feature-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark">
-                    <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5"><i class="fas fa-check-double text-2xl sm:text-3xl text-phone-accent"></i></div>
-                    <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-900 dark:text-white">100% Genuine Products</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">All our products are 100% authentic with manufacturer warranty and after-sales support.</p>
-                </div>
-                <div class="feature-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark">
-                    <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent2/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5"><i class="fas fa-truck text-2xl sm:text-3xl text-phone-accent2"></i></div>
-                    <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-900 dark:text-white">Fast &amp; Free Delivery</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Free shipping on all orders with express delivery options available for urgent needs.</p>
-                </div>
-                <div class="feature-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark">
-                    <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent3/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5"><i class="fas fa-headset text-2xl sm:text-3xl text-phone-accent3"></i></div>
-                    <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-900 dark:text-white">Expert Support</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Our knowledgeable team provides professional guidance and after-sales support.</p>
-                </div>
-                <div class="feature-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark">
-                    <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5"><i class="fas fa-hand-holding-usd text-2xl sm:text-3xl text-phone-accent"></i></div>
-                    <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-900 dark:text-white">Best Price Guarantee</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">We match competitor prices and offer exclusive deals for our loyal customers.</p>
-                </div>
-                <div class="feature-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark">
-                    <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent2/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5"><i class="fas fa-sync-alt text-2xl sm:text-3xl text-phone-accent2"></i></div>
-                    <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-900 dark:text-white">Easy Returns</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Hassle-free returns and exchanges within 30 days of purchase for your peace of mind.</p>
-                </div>
-                <div class="feature-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark">
-                    <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent3/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5"><i class="fas fa-star text-2xl sm:text-3xl text-phone-accent3"></i></div>
-                    <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-900 dark:text-white">Trusted Since 2015</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Over 8 years of excellence serving thousands of happy customers worldwide.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SECTION 3: CATEGORIES ===== -->
+    <!-- ===== SECTION: EASY TO CHOOSE (CATEGORIES) ===== -->
     <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark transition-colors duration-300 w-full">
-        <div class="max-w-7xl mx-auto w-full">
+        <div class="max-w-[1400px] mx-auto w-full">
             <div class="text-center mb-12 sm:mb-16">
-                <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Shop by Category</span>
-                <h2 class="section-title font-serif text-3xl sm:text-4xl md:text-5xl text-gray-900 dark:text-white font-bold mt-2">Our <span class="italic text-phone-accent2">Categories</span></h2>
+                <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Categories</span>
+                <h2 class="section-title font-serif text-3xl sm:text-4xl md:text-5xl text-gray-900 dark:text-white font-bold mt-2">Easy to <span class="italic text-phone-accent">Choose</span></h2>
                 <div class="w-16 sm:w-20 h-1.5 bg-phone-accent mx-auto mt-3 sm:mt-4 rounded-full"></div>
-                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-3 sm:mt-4 text-sm sm:text-base">Explore our wide range of mobile phones and accessories.</p>
             </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-                <div class="category-card p-4 sm:p-6 text-center group">
-                    <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-gradient-to-br group-hover:from-phone-accent group-hover:to-phone-accent2 group-hover:text-white transition-all">
-                        <i class="fas fa-mobile-alt text-2xl sm:text-3xl text-phone-accent group-hover:text-white"></i>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Category 1 -->
+                <a href="smartphones.html" class="group relative rounded-3xl overflow-hidden aspect-square md:aspect-[4/5] shadow-lg hover:shadow-2xl hover:shadow-phone-accent/20 transition-all duration-500 hover:-translate-y-2 block">
+                    <img src="assests/homec1.jpg" alt="Smartphones" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 sm:p-8 w-full">
+                        <h3 class="text-white font-bold text-2xl sm:text-3xl mb-2">Smartphones</h3>
+                        <p class="text-gray-300 text-sm flex items-center gap-2 font-medium">Shop Now <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i></p>
                     </div>
-                    <h4 class="font-bold text-sm sm:text-lg">Smartphones</h4>
-                    <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Latest Models</p>
-                </div>
-                <div class="category-card p-4 sm:p-6 text-center group">
-                    <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent2/10 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-gradient-to-br group-hover:from-phone-accent2 group-hover:to-phone-accent group-hover:text-white transition-all">
-                        <i class="fas fa-headphones text-2xl sm:text-3xl text-phone-accent2 group-hover:text-white"></i>
+                </a>
+                
+                <!-- Category 2 -->
+                <a href="accessories.html" class="group relative rounded-3xl overflow-hidden aspect-square md:aspect-[4/5] shadow-lg hover:shadow-2xl hover:shadow-phone-accent2/20 transition-all duration-500 hover:-translate-y-2 block">
+                    <img src="assests/homec2.jpg" alt="Accessories" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 sm:p-8 w-full">
+                        <h3 class="text-white font-bold text-2xl sm:text-3xl mb-2">Accessories</h3>
+                        <p class="text-gray-300 text-sm flex items-center gap-2 font-medium">Shop Now <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i></p>
                     </div>
-                    <h4 class="font-bold text-sm sm:text-lg">Audio</h4>
-                    <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Headphones &amp; Earbuds</p>
-                </div>
-                <div class="category-card p-4 sm:p-6 text-center group">
-                    <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent3/10 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-gradient-to-br group-hover:from-phone-accent3 group-hover:to-phone-accent group-hover:text-white transition-all">
-                        <i class="fas fa-bolt text-2xl sm:text-3xl text-phone-accent3 group-hover:text-white"></i>
+                </a>
+                
+                <!-- Category 3 -->
+                <a href="#" class="group relative rounded-3xl overflow-hidden aspect-square md:aspect-[4/5] shadow-lg hover:shadow-2xl hover:shadow-phone-accent3/20 transition-all duration-500 hover:-translate-y-2 block">
+                    <img src="assests/watch.jpg" alt="Smartwatches" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 sm:p-8 w-full">
+                        <h3 class="text-white font-bold text-2xl sm:text-3xl mb-2">Smartwatches</h3>
+                        <p class="text-gray-300 text-sm flex items-center gap-2 font-medium">Shop Now <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i></p>
                     </div>
-                    <h4 class="font-bold text-sm sm:text-lg">Chargers</h4>
-                    <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Cables &amp; Adapters</p>
-                </div>
-                <div class="category-card p-4 sm:p-6 text-center group">
-                    <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-purple/10 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-gradient-to-br group-hover:from-phone-purple group-hover:to-phone-accent group-hover:text-white transition-all">
-                        <i class="fas fa-shield-alt text-2xl sm:text-3xl text-phone-purple group-hover:text-white"></i>
+                </a>
+                
+                <!-- Category 4 -->
+                <a href="#" class="group relative rounded-3xl overflow-hidden aspect-square md:aspect-[4/5] shadow-lg hover:shadow-2xl hover:shadow-phone-purple/20 transition-all duration-500 hover:-translate-y-2 block">
+                    <img src="assests/headset.jpg" alt="Audio" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 sm:p-8 w-full">
+                        <h3 class="text-white font-bold text-2xl sm:text-3xl mb-2">Audio</h3>
+                        <p class="text-gray-300 text-sm flex items-center gap-2 font-medium">Shop Now <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i></p>
                     </div>
-                    <h4 class="font-bold text-sm sm:text-lg">Cases</h4>
-                    <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Protection &amp; Style</p>
-                </div>
-                <div class="category-card p-4 sm:p-6 text-center group">
-                    <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-gradient-to-br group-hover:from-phone-accent group-hover:to-phone-purple group-hover:text-white transition-all">
-                        <i class="fas fa-clock text-2xl sm:text-3xl text-phone-accent group-hover:text-white"></i>
-                    </div>
-                    <h4 class="font-bold text-sm sm:text-lg">Smart Watches</h4>
-                    <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Wearable Tech</p>
-                </div>
-                <div class="category-card p-4 sm:p-6 text-center group">
-                    <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent2/10 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-gradient-to-br group-hover:from-phone-accent2 group-hover:to-phone-purple group-hover:text-white transition-all">
-                        <i class="fas fa-camera text-2xl sm:text-3xl text-phone-accent2 group-hover:text-white"></i>
-                    </div>
-                    <h4 class="font-bold text-sm sm:text-lg">Accessories</h4>
-                    <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Lenses &amp; More</p>
-                </div>
-                <div class="category-card p-4 sm:p-6 text-center group">
-                    <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent3/10 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-gradient-to-br group-hover:from-phone-accent3 group-hover:to-phone-accent2 group-hover:text-white transition-all">
-                        <i class="fas fa-battery-full text-2xl sm:text-3xl text-phone-accent3 group-hover:text-white"></i>
-                    </div>
-                    <h4 class="font-bold text-sm sm:text-lg">Power Banks</h4>
-                    <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Portable Charging</p>
-                </div>
-                <div class="category-card p-4 sm:p-6 text-center group">
-                    <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-purple/10 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-gradient-to-br group-hover:from-phone-purple group-hover:to-phone-accent2 group-hover:text-white transition-all">
-                        <i class="fas fa-tags text-2xl sm:text-3xl text-phone-purple group-hover:text-white"></i>
-                    </div>
-                    <h4 class="font-bold text-sm sm:text-lg">Brands</h4>
-                    <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Top Manufacturers</p>
-                </div>
-            </div>
-            <div class="text-center mt-8 sm:mt-10">
-                <a href="smartphones.html" class="btn-primary text-sm sm:text-base"><i class="fas fa-list"></i> View All Products</a>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- ===== SECTION 4: STATS ===== -->
-    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-gradient-to-br from-phone-primary via-phone-secondary to-phone-primary text-white w-full">
-        <div class="max-w-7xl mx-auto w-full">
+    <!-- ===== SECTION: BEST SELLERS ===== -->
+    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-[#0a1526] transition-colors duration-300 w-full">
+        <div class="max-w-[1400px] mx-auto w-full">
             <div class="text-center mb-12 sm:mb-16">
-                <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Our Impact</span>
-                <h2 class="section-title font-serif text-3xl sm:text-4xl md:text-5xl font-bold mt-2">By the <span class="italic text-phone-accent2">Numbers</span></h2>
-                <div class="w-16 sm:w-20 h-1.5 bg-phone-accent mx-auto mt-3 sm:mt-4 rounded-full"></div>
+                <span class="text-phone-accent2 font-bold uppercase tracking-widest text-xs sm:text-sm">Trending Now</span>
+                <h2 class="section-title font-serif text-3xl sm:text-4xl md:text-5xl text-gray-900 dark:text-white font-bold mt-2">Best <span class="italic text-phone-accent2">Sellers</span></h2>
+                <div class="w-16 sm:w-20 h-1.5 bg-phone-accent2 mx-auto mt-3 sm:mt-4 rounded-full"></div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center border border-white/10 hover:border-phone-accent/40 transition-all">
-                    <div class="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-phone-accent">100+</div>
-                    <div class="text-xs sm:text-sm text-gray-300 mt-1">Top Brands</div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Best Seller 1 -->
+                <div class="bg-white dark:bg-phone-dark-alt rounded-[2.5rem] p-6 sm:p-8 flex items-center gap-6 shadow-xl border border-gray-100 dark:border-gray-800 hover:shadow-2xl hover:shadow-phone-accent2/20 transition-all duration-300 group">
+                    <div class="w-1/3 aspect-square rounded-2xl overflow-hidden bg-gray-50 dark:bg-gray-900 flex-shrink-0">
+                        <img src="assests/samsung.jpg" alt="Galaxy S24 Ultra" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="text-xs font-bold text-phone-accent2 mb-1">#1 Best Seller</div>
+                        <h4 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 leading-tight">Galaxy S24 Ultra</h4>
+                        <div class="font-bold text-gray-900 dark:text-white mb-3"></div>
+                        <button class="text-sm font-bold bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-2 rounded-lg hover:bg-phone-accent2 dark:hover:bg-phone-accent2 transition-colors w-full sm:w-auto">Add to Cart</button>
+                    </div>
                 </div>
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center border border-white/10 hover:border-phone-accent2/40 transition-all">
-                    <div class="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-phone-accent2">500+</div>
-                    <div class="text-xs sm:text-sm text-gray-300 mt-1">Products</div>
+                
+                <!-- Best Seller 2 -->
+                <div class="bg-white dark:bg-phone-dark-alt rounded-[2.5rem] p-6 sm:p-8 flex items-center gap-6 shadow-xl border border-gray-100 dark:border-gray-800 hover:shadow-2xl hover:shadow-phone-accent/20 transition-all duration-300 group">
+                    <div class="w-1/3 aspect-square rounded-2xl overflow-hidden bg-gray-50 dark:bg-gray-900 flex-shrink-0">
+                        <img src="assests/15pro.jpg" alt="iPhone 15 Pro Max" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="text-xs font-bold text-phone-accent mb-1">#2 Best Seller</div>
+                        <h4 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 leading-tight">iPhone 15 Pro Max</h4>
+                        <div class="font-bold text-gray-900 dark:text-white mb-3"></div>
+                        <button class="text-sm font-bold bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-2 rounded-lg hover:bg-phone-accent dark:hover:bg-phone-accent transition-colors w-full sm:w-auto">Add to Cart</button>
+                    </div>
                 </div>
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center border border-white/10 hover:border-phone-accent3/40 transition-all">
-                    <div class="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-phone-accent3">98%</div>
-                    <div class="text-xs sm:text-sm text-gray-300 mt-1">Satisfaction Rate</div>
-                </div>
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center border border-white/10 hover:border-phone-purple/40 transition-all">
-                    <div class="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-phone-purple">10K+</div>
-                    <div class="text-xs sm:text-sm text-gray-300 mt-1">Happy Customers</div>
+                
+                <!-- Best Seller 3 -->
+                <div class="bg-white dark:bg-phone-dark-alt rounded-[2.5rem] p-6 sm:p-8 flex items-center gap-6 shadow-xl border border-gray-100 dark:border-gray-800 hover:shadow-2xl hover:shadow-phone-accent3/20 transition-all duration-300 group">
+                    <div class="w-1/3 aspect-square rounded-2xl overflow-hidden bg-gray-50 dark:bg-gray-900 flex-shrink-0">
+                        <img src="assests/acc2.jpg" alt="AirPods Pro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="text-xs font-bold text-phone-accent3 mb-1">#3 Best Seller</div>
+                        <h4 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 leading-tight">Power Bank</h4>
+                        <div class="font-bold text-gray-900 dark:text-white mb-3"></div>
+                        <button class="text-sm font-bold bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-2 rounded-lg hover:bg-phone-accent3 dark:hover:bg-phone-accent3 transition-colors w-full sm:w-auto">Add to Cart</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- ===== SECTION 5: FEATURED PRODUCTS ===== -->
-    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-phone-dark/80 transition-colors duration-300 w-full">
+
+    <!-- ===== SECTION 5: FEATURED PRODUCTS ===== -->
+    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-phone-dark-alt transition-colors duration-300 w-full">
         <div class="max-w-7xl mx-auto w-full">
             
             <!-- Section Header -->
@@ -939,7 +899,7 @@
                     <div class="flex flex-col flex-grow p-6 sm:p-8 bg-white dark:bg-gray-800 relative z-20">
                         <div class="flex justify-between items-start mb-4 gap-2">
                             <div>
-                                <h4 class="font-bold text-xl sm:text-2xl text-gray-900 dark:text-white group-hover:text-phone-accent2 transition-colors line-clamp-1">Sony WH-1000XM5</h4>
+                                <h4 class="font-bold text-xl sm:text-2xl text-gray-900 dark:text-white group-hover:text-phone-accent2 transition-colors line-clamp-1">Sony </h4>
                                 <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Noise Cancelling</p>
                             </div>
                             <div class="flex gap-0.5 text-yellow-400 text-[10px] sm:text-xs mt-1.5 shrink-0">
@@ -977,7 +937,7 @@
                     <div class="flex flex-col flex-grow p-6 sm:p-8 bg-white dark:bg-gray-800 relative z-20">
                         <div class="flex justify-between items-start mb-4 gap-2">
                             <div>
-                                <h4 class="font-bold text-xl sm:text-2xl text-gray-900 dark:text-white group-hover:text-phone-purple transition-colors line-clamp-1">Apple Watch Series 9</h4>
+                                <h4 class="font-bold text-xl sm:text-2xl text-gray-900 dark:text-white group-hover:text-phone-purple transition-colors line-clamp-1">Apple Watch</h4>
                                 <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">GPS + Cellular</p>
                             </div>
                             <div class="flex gap-0.5 text-yellow-400 text-[10px] sm:text-xs mt-1.5 shrink-0">
@@ -1009,27 +969,48 @@
         </div>
     </section>
 
-    <!-- ===== SECTION 6: CTA ===== -->
-    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-gradient-to-br from-phone-primary via-phone-secondary to-phone-primary text-white relative overflow-hidden w-full">
-        <div class="absolute inset-0 opacity-10 pointer-events-none">
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-phone-accent rounded-full blur-3xl"></div>
-        </div>
-        <div class="relative z-10 max-w-5xl mx-auto text-center w-full">
-            <i class="fas fa-comment-dots text-4xl sm:text-5xl text-phone-accent2 mb-4 sm:mb-6"></i>
-            <h2 class="font-serif text-3xl sm:text-4xl md:text-6xl font-bold mb-3 sm:mb-4">Need Help <span class="italic text-phone-accent">Choosing</span> Your Phone?</h2>
-            <p class="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-6 sm:mb-10 leading-relaxed">Our experts are here to help you find the perfect smartphone and accessories for your needs.</p>
-            <div class="flex flex-wrap gap-3 sm:gap-5 justify-center mb-6 sm:mb-8">
-                <a href="contact.html" class="btn-primary bg-gradient-to-r from-phone-accent to-phone-accent2 text-phone-primary hover:shadow-xl text-sm sm:text-base md:text-lg"><i class="fas fa-paper-plane"></i> Contact Us</a>
-                <a href="smartphones.html" class="btn-outline border-white text-white hover:bg-white hover:text-phone-primary text-sm sm:text-base md:text-lg"><i class="fas fa-shopping-cart"></i> Shop Now</a>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto text-xs sm:text-sm">
-                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10"><i class="fas fa-check-circle text-phone-accent text-lg sm:text-xl block mb-1 sm:mb-2"></i><span class="text-white/80">100% Genuine</span></div>
-                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10"><i class="fas fa-check-circle text-phone-accent2 text-lg sm:text-xl block mb-1 sm:mb-2"></i><span class="text-white/80">Free Delivery</span></div>
-                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10"><i class="fas fa-check-circle text-phone-accent3 text-lg sm:text-xl block mb-1 sm:mb-2"></i><span class="text-white/80">Expert Support</span></div>
-                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10"><i class="fas fa-check-circle text-phone-purple text-lg sm:text-xl block mb-1 sm:mb-2"></i><span class="text-white/80">Best Price</span></div>
+        <!-- ===== SECTION: EXCLUSIVE OFFERS ===== -->
+    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark transition-colors duration-300 w-full relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-phone-accent/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-phone-accent2/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-[1400px] mx-auto w-full relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Offer 1 -->
+                <div class="bg-gradient-to-br from-[#0a1526] to-[#122340] rounded-[2.5rem] p-8 sm:p-12 shadow-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-phone-accent/20 rounded-full blur-[80px] group-hover:bg-phone-accent/30 transition-colors duration-500"></div>
+                    <div class="relative z-10">
+                        <span class="inline-block py-1.5 px-4 rounded-full bg-phone-accent/20 text-phone-accent font-bold tracking-widest text-xs mb-6 border border-phone-accent/30">Limited Time</span>
+                        <h3 class="text-white font-bold text-3xl sm:text-4xl mb-4 leading-tight">Save up to <br>on iPhone 15 Pro</h3>
+                        <p class="text-gray-400 mb-8 max-w-sm">Plus, get 6 months of Apple Music free with your purchase.</p>
+                        <a href="smartphones.html" class="inline-flex items-center gap-2 bg-phone-accent text-white font-bold px-6 py-3 rounded-xl hover:bg-[#ff4f4f] transition-colors shadow-lg shadow-phone-accent/30">
+                            Shop Offer <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <img src="assests/15pro.jpg" alt="iPhone 15 Pro" class="absolute bottom-[-10%] right-[-10%] w-2/3 object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700">
+                </div>
+                
+                <!-- Offer 2 -->
+                <div class="bg-gradient-to-br from-[#1c1c1c] to-[#2d2d2d] rounded-[2.5rem] p-8 sm:p-12 shadow-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-phone-accent2/20 rounded-full blur-[80px] group-hover:bg-phone-accent2/30 transition-colors duration-500"></div>
+                    <div class="relative z-10">
+                        <span class="inline-block py-1.5 px-4 rounded-full bg-phone-accent2/20 text-phone-accent2 font-bold tracking-widest text-xs mb-6 border border-phone-accent2/30">Bundle Deal</span>
+                        <h3 class="text-white font-bold text-3xl sm:text-4xl mb-4 leading-tight">Galaxy S24 Ultra<br>+ Galaxy Watch6</h3>
+                        <p class="text-gray-400 mb-8 max-w-sm">Get a free Galaxy Watch6 when you pre-order the new S24 Ultra.</p>
+                        <a href="smartphones.html" class="inline-flex items-center gap-2 bg-phone-accent2 text-white font-bold px-6 py-3 rounded-xl hover:bg-[#3482ff] transition-colors shadow-lg shadow-phone-accent2/30">
+                            Shop Bundle <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <img src="assests/samsung.jpg" alt="Galaxy S24 Ultra" class="absolute bottom-[-10%] right-[-10%] w-2/3 object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700">
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- ===== SECTION: PRODUCT COMPARISON ===== -->
+    
+
 
     <!-- ===== FOOTER ===== -->
     <footer class="pt-12 sm:pt-16 pb-6 sm:pb-8 bg-black text-white w-full">

@@ -27,7 +27,8 @@
                         'phone-accent3': '#6BCB77',
                         'phone-purple': '#6C3CE1',
                         'phone-light': '#F5F5F5',
-                        'phone-dark': '#0D0D1A',
+                        'phone-dark': '#000000',
+                        'phone-dark-alt': '#0A0A0A',
                     }
                 }
             }
@@ -73,7 +74,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
         }
         .dark .navbar-wrapper.scrolled {
-            background: rgba(13, 13, 26, 0.96);
+            background: rgba(0, 0, 0, 0.96);
         }
 
         .navbar-inner {
@@ -170,7 +171,7 @@
             border: 1px solid rgba(255, 107, 107, 0.15);
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
         }
-        .dark .dropdown-menu { background: rgba(13, 13, 26, 0.96); }
+        .dark .dropdown-menu { background: rgba(0, 0, 0, 0.96); }
         .dropdown-wrapper:hover .dropdown-menu,
         .dropdown-wrapper.open .dropdown-menu {
             opacity: 1;
@@ -258,7 +259,7 @@
             border: 1px solid rgba(255, 107, 107, 0.15);
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
         }
-        .dark .auth-dropdown { background: rgba(13, 13, 26, 0.96); }
+        .dark .auth-dropdown { background: rgba(0, 0, 0, 0.96); }
         .auth-dropdown.active {
             opacity: 1;
             visibility: visible;
@@ -559,7 +560,7 @@
         }
     </style>
 </head>
-<body class="bg-white dark:bg-phone-dark text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
+<body class="bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
 
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar-wrapper" id="navbarWrapper">
@@ -674,7 +675,7 @@
     </section>
 
     <!-- ===== SECTION 2: OUR STORY ===== -->
-    <section id="story" class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark transition-colors duration-300 w-full">
+    <section id="story" class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark-alt transition-colors duration-300 w-full">
         <div class="max-w-7xl mx-auto w-full">
             <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
                 <div class="w-full lg:w-1/2">
@@ -708,7 +709,7 @@
     </section>
 
     <!-- ===== SECTION 3: MISSION, VISION, VALUES ===== -->
-    <section id="values" class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-phone-dark/80 transition-colors duration-300 w-full">
+    <section id="values" class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-phone-dark-alt transition-colors duration-300 w-full">
         <div class="max-w-7xl mx-auto w-full">
             <div class="text-center mb-12 sm:mb-16">
                 <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Core Principles</span>
@@ -737,7 +738,7 @@
     </section>
 
     <!-- ===== SECTION 4: WHAT MAKES US DIFFERENT ===== -->
-    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark transition-colors duration-300 w-full">
+    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark-alt transition-colors duration-300 w-full">
         <div class="max-w-7xl mx-auto w-full">
             <div class="text-center mb-12 sm:mb-16">
                 <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Why Choose Us</span>
@@ -746,32 +747,32 @@
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-3 sm:mt-4 text-sm sm:text-base">Five pillars that make PhoneHub your trusted mobile partner.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <div class="value-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark">
+                <div class="value-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark-alt">
                     <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5 text-2xl sm:text-3xl text-phone-accent"><i class="fas fa-shield-alt"></i></div>
                     <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">100% Authentic</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Every product we sell is 100% genuine with manufacturer warranty and full authenticity guarantee.</p>
                 </div>
-                <div class="value-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark">
+                <div class="value-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark-alt">
                     <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent2/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5 text-2xl sm:text-3xl text-phone-accent2"><i class="fas fa-user-tie"></i></div>
                     <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Expert Advice</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Our knowledgeable staff provides personalized recommendations based on your needs and budget.</p>
                 </div>
-                <div class="value-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark">
+                <div class="value-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark-alt">
                     <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent3/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5 text-2xl sm:text-3xl text-phone-accent3"><i class="fas fa-truck"></i></div>
                     <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Fast Delivery</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Free shipping on all orders with express delivery options available for urgent needs.</p>
                 </div>
-                <div class="value-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark">
+                <div class="value-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark-alt">
                     <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-purple/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5 text-2xl sm:text-3xl text-phone-purple"><i class="fas fa-hand-holding-usd"></i></div>
                     <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Best Price</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">We match competitor prices and offer exclusive deals for our loyal customers.</p>
                 </div>
-                <div class="value-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark">
+                <div class="value-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark-alt">
                     <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5 text-2xl sm:text-3xl text-phone-accent"><i class="fas fa-headset"></i></div>
                     <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Support</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Dedicated after-sales support to help you with setup, troubleshooting, and repairs.</p>
                 </div>
-                <div class="value-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark">
+                <div class="value-card p-6 sm:p-8 text-center bg-white dark:bg-phone-dark-alt">
                     <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent2/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5 text-2xl sm:text-3xl text-phone-accent2"><i class="fas fa-sync-alt"></i></div>
                     <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Easy Returns</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">30-day hassle-free returns and exchanges for your complete peace of mind.</p>
@@ -781,7 +782,7 @@
     </section>
 
     <!-- ===== SECTION 5: TEAM / LEADERSHIP ===== -->
-    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-phone-dark/80 transition-colors duration-300 w-full">
+    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-phone-dark-alt transition-colors duration-300 w-full">
         <div class="max-w-7xl mx-auto w-full">
             <div class="text-center mb-12 sm:mb-16">
                 <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Our Team</span>

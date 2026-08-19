@@ -27,7 +27,8 @@
                         'phone-accent3': '#6BCB77',
                         'phone-purple': '#6C3CE1',
                         'phone-light': '#F5F5F5',
-                        'phone-dark': '#0D0D1A',
+                        'phone-dark': '#000000',
+                        'phone-dark-alt': '#0A0A0A',
                     }
                 }
             }
@@ -73,7 +74,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
         }
         .dark .navbar-wrapper.scrolled {
-            background: rgba(13, 13, 26, 0.96);
+            background: rgba(0, 0, 0, 0.96);
         }
 
         .navbar-inner {
@@ -170,7 +171,7 @@
             border: 1px solid rgba(255, 107, 107, 0.15);
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
         }
-        .dark .dropdown-menu { background: rgba(13, 13, 26, 0.96); }
+        .dark .dropdown-menu { background: rgba(0, 0, 0, 0.96); }
         .dropdown-wrapper:hover .dropdown-menu,
         .dropdown-wrapper.open .dropdown-menu {
             opacity: 1;
@@ -258,7 +259,7 @@
             border: 1px solid rgba(255, 107, 107, 0.15);
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
         }
-        .dark .auth-dropdown { background: rgba(13, 13, 26, 0.96); }
+        .dark .auth-dropdown { background: rgba(0, 0, 0, 0.96); }
         .auth-dropdown.active {
             opacity: 1;
             visibility: visible;
@@ -593,7 +594,7 @@
         }
     </style>
 </head>
-<body class="bg-white dark:bg-phone-dark text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
+<body class="bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
 
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar-wrapper" id="navbarWrapper">
@@ -718,7 +719,7 @@
     </section>
 
     <!-- ===== SECTION 2: ACCESSORIES CATEGORIES ===== -->
-    <section id="accessories" class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark transition-colors duration-300 w-full">
+    <section id="accessories" class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark-alt transition-colors duration-300 w-full">
         <div class="max-w-7xl mx-auto w-full">
             <div class="text-center mb-12 sm:mb-16">
                 <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Categories</span>
@@ -791,12 +792,12 @@
             <div class="text-center mt-8 sm:mt-10">
                 <a href="accessories.html" class="btn-primary text-sm sm:text-base"><i class="fas fa-list"></i> View All Accessories</a>
             </div>
-        </div>
+        </div>  
     </section>
 
     <!-- ===== SECTION 3: BEST SELLING ACCESSORIES ===== -->
     <!-- ===== SECTION: BEST SELLER ACCESSORIES ===== -->
-    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-phone-dark/80 transition-colors duration-300 w-full">
+    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-phone-dark-alt transition-colors duration-300 w-full">
         <div class="max-w-7xl mx-auto w-full">
             
             <!-- Section Header -->
@@ -931,7 +932,7 @@
     </section>
 
     <!-- ===== SECTION 4: BUNDLE DEALS ===== -->
-    <section id="bundles" class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark transition-colors duration-300 w-full">
+    <section id="bundles" class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark-alt transition-colors duration-300 w-full">
         <div class="max-w-7xl mx-auto w-full">
             <div class="text-center mb-12 sm:mb-16">
                 <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm"><i class="fas fa-boxes mr-1.5"></i> Bundle &amp; Save</span>
@@ -982,83 +983,6 @@
                         <span class="text-sm sm:text-base text-gray-400 line-through">$219</span>
                     </div>
                     <a href="#" class="flex justify-center items-center gap-2 mt-4 btn-primary text-sm w-full"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SECTION 5: BRANDS WE CARRY ===== -->
-    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-gradient-to-br from-phone-primary via-phone-secondary to-phone-primary text-white w-full">
-        <div class="max-w-7xl mx-auto w-full">
-            <div class="text-center mb-12 sm:mb-16">
-                <span class="text-phone-accent font-bold uppercase tracking-widest text-xs sm:text-sm">Trusted Brands</span>
-                <h2 class="section-title font-serif text-3xl sm:text-4xl md:text-5xl font-bold mt-2">Premium <span class="italic text-phone-accent2">Brands</span></h2>
-                <div class="w-16 sm:w-20 h-1.5 bg-phone-accent mx-auto mt-3 sm:mt-4 rounded-full"></div>
-                <p class="text-gray-300 max-w-2xl mx-auto mt-3 sm:mt-4 text-sm sm:text-base">We partner with the most trusted accessory brands in the world.</p>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-3 sm:p-4 text-center border border-white/10 hover:border-phone-accent/40 transition-all">
-                    <div class="text-xl sm:text-2xl font-bold text-phone-accent">Apple</div>
-                </div>
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-3 sm:p-4 text-center border border-white/10 hover:border-phone-accent2/40 transition-all">
-                    <div class="text-xl sm:text-2xl font-bold text-phone-accent2">Sony</div>
-                </div>
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-3 sm:p-4 text-center border border-white/10 hover:border-phone-accent3/40 transition-all">
-                    <div class="text-xl sm:text-2xl font-bold text-phone-accent3">oppo</div>
-                </div>
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-3 sm:p-4 text-center border border-white/10 hover:border-phone-purple/40 transition-all">
-                    <div class="text-xl sm:text-2xl font-bold text-phone-purple">Oneplus</div>
-                </div>
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-3 sm:p-4 text-center border border-white/10 hover:border-phone-accent/40 transition-all">
-                    <div class="text-xl sm:text-2xl font-bold text-phone-accent">Samsung</div>
-                </div>
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-3 sm:p-4 text-center border border-white/10 hover:border-phone-accent2/40 transition-all">
-                    <div class="text-xl sm:text-2xl font-bold text-phone-accent2">Vivo</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SECTION 6: CTA / SHOP ===== -->
-    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark transition-colors duration-300 w-full">
-        <div class="max-w-6xl mx-auto w-full">
-            <div class="bg-gradient-to-br from-phone-light to-phone-accent/5 dark:from-phone-dark dark:to-phone-accent/5 rounded-[2.5rem] p-8 sm:p-12 md:p-16 shadow-2xl border border-phone-accent/10">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                    <div>
-                        <span class="text-phone-accent font-bold tracking-[0.2em] uppercase text-xs sm:text-sm mb-4 block">Ready to Upgrade?</span>
-                        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-gray-900 dark:text-white font-bold leading-tight mb-4">
-                            Complete Your <span class="italic text-phone-accent">Mobile</span> Experience
-                        </h2>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed mb-6">
-                            Find the perfect accessories to protect, charge, and enhance your smartphone. Shop our curated collection today.
-                        </p>
-                        <div class="flex flex-wrap gap-3 sm:gap-4">
-                            <a href="accessories.html" class="btn-primary"><i class="fas fa-shopping-cart"></i> Shop Now</a>
-                            <a href="contact.html" class="btn-outline"><i class="fas fa-headset"></i> Need Help?</a>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-3 sm:gap-4">
-                        <div class="bg-white dark:bg-phone-dark rounded-2xl p-3 sm:p-4 text-center shadow-lg border border-phone-accent/10">
-                            <i class="fas fa-check-circle text-phone-accent text-2xl sm:text-3xl block mb-1 sm:mb-2"></i>
-                            <span class="text-xs sm:text-sm font-bold block">100% Authentic</span>
-                            <span class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Genuine Products</span>
-                        </div>
-                        <div class="bg-white dark:bg-phone-dark rounded-2xl p-3 sm:p-4 text-center shadow-lg border border-phone-accent2/10">
-                            <i class="fas fa-check-circle text-phone-accent2 text-2xl sm:text-3xl block mb-1 sm:mb-2"></i>
-                            <span class="text-xs sm:text-sm font-bold block">Free Shipping</span>
-                            <span class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">On All Orders</span>
-                        </div>
-                        <div class="bg-white dark:bg-phone-dark rounded-2xl p-3 sm:p-4 text-center shadow-lg border border-phone-accent3/10">
-                            <i class="fas fa-check-circle text-phone-accent3 text-2xl sm:text-3xl block mb-1 sm:mb-2"></i>
-                            <span class="text-xs sm:text-sm font-bold block">30-Day Returns</span>
-                            <span class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Hassle-Free</span>
-                        </div>
-                        <div class="bg-white dark:bg-phone-dark rounded-2xl p-3 sm:p-4 text-center shadow-lg border border-phone-purple/10">
-                            <i class="fas fa-check-circle text-phone-purple text-2xl sm:text-3xl block mb-1 sm:mb-2"></i>
-                            <span class="text-xs sm:text-sm font-bold block">Expert Support</span>
-                            <span class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">24/7 Help</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
