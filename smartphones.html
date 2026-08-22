@@ -679,7 +679,29 @@
         <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-phone-accent2/10 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto w-full relative z-10">
-            <div class="text-center mb-16 sm:mb-24">
+            
+            <!-- Filters & Sorting Bar -->
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12 sm:mb-16 bg-white dark:bg-phone-dark/80 p-4 sm:p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 gap-4">
+                <div class="flex flex-wrap items-center gap-3">
+                    <span class="text-sm font-semibold text-gray-600 dark:text-gray-300">Filter by Brand:</span>
+                    <button class="px-4 py-2 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-medium transition-colors">All</button>
+                    <button class="px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium transition-colors">Apple</button>
+                    <button class="px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium transition-colors">Samsung</button>
+                    <button class="px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium transition-colors">Google</button>
+                    <button class="px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium transition-colors">OnePlus</button>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-sm font-semibold text-gray-600 dark:text-gray-300">Sort by:</span>
+                    <select class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm rounded-xl px-4 py-2 outline-none focus:ring-2 focus:ring-phone-accent/50 border-none cursor-pointer">
+                        <option>Featured</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Newest Arrivals</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="text-center mb-12 sm:mb-16">
                 <span class="inline-block py-1.5 px-4 rounded-full bg-phone-accent/10 text-phone-accent font-bold uppercase tracking-widest text-xs mb-4 border border-phone-accent/20">Elite Selection</span>
                 <h2 class="section-title font-serif text-4xl sm:text-5xl md:text-6xl text-gray-900 dark:text-white font-bold mt-2">Premium <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-phone-accent to-phone-accent2">Flagships</span></h2>
                 <div class="w-24 h-1.5 bg-gradient-to-r from-phone-accent to-phone-accent2 mx-auto mt-6 rounded-full"></div>
@@ -810,6 +832,95 @@
         </div>
     </section>
 
+    <!-- ===== NEW SECTION: MID-RANGE & VALUE PICKS ===== -->
+    <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white dark:bg-phone-dark transition-colors duration-300 w-full relative border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto w-full relative z-10">
+            <div class="text-center mb-12 sm:mb-16">
+                <span class="inline-block py-1.5 px-4 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-bold uppercase tracking-widest text-xs mb-4 border border-blue-500/20">Smart Choices</span>
+                <h2 class="section-title font-serif text-3xl sm:text-4xl md:text-5xl text-gray-900 dark:text-white font-bold mt-2">Mid-Range & <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">Value Picks</span></h2>
+                <div class="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-teal-400 mx-auto mt-5 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+                <!-- Product 1: OnePlus 12R -->
+                <div class="flex flex-col sm:flex-row bg-phone-light dark:bg-[#121a2f] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 group">
+                    <div class="sm:w-2/5 h-48 sm:h-auto relative overflow-hidden bg-gray-200 dark:bg-gray-800 flex-shrink-0 p-4 flex items-center justify-center">
+                        <img src="assests/oneplus-logo.svg" alt="OnePlus 12R" class="w-24 h-24 object-contain transform group-hover:scale-110 transition-transform duration-500 dark:invert">
+                    </div>
+                    <div class="p-6 flex flex-col justify-center flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">OnePlus 12R</h4>
+                            <span class="text-lg font-bold text-blue-600 dark:text-blue-400">$499</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Flagship killer performance</p>
+                        <div class="flex gap-2 mb-6 flex-wrap">
+                            <span class="px-2 py-1 bg-white dark:bg-phone-dark rounded text-[10px] font-semibold text-gray-600 dark:text-gray-300 shadow-sm">Snapdragon 8 Gen 2</span>
+                            <span class="px-2 py-1 bg-white dark:bg-phone-dark rounded text-[10px] font-semibold text-gray-600 dark:text-gray-300 shadow-sm">5500mAh</span>
+                        </div>
+                        <button class="mt-auto w-full sm:w-auto px-6 py-2.5 rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-sm hover:bg-blue-600 dark:hover:bg-blue-500 dark:hover:text-white transition-colors">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Product 2: Galaxy A55 -->
+                <div class="flex flex-col sm:flex-row bg-phone-light dark:bg-[#121a2f] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 group">
+                    <div class="sm:w-2/5 h-48 sm:h-auto relative overflow-hidden bg-gray-200 dark:bg-gray-800 flex-shrink-0 p-4 flex items-center justify-center">
+                        <img src="assests/samsung-logo.svg" alt="Galaxy A55" class="w-24 h-24 object-contain transform group-hover:scale-110 transition-transform duration-500 dark:invert">
+                    </div>
+                    <div class="p-6 flex flex-col justify-center flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Galaxy A55</h4>
+                            <span class="text-lg font-bold text-blue-600 dark:text-blue-400">$449</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Premium design for less</p>
+                        <div class="flex gap-2 mb-6 flex-wrap">
+                            <span class="px-2 py-1 bg-white dark:bg-phone-dark rounded text-[10px] font-semibold text-gray-600 dark:text-gray-300 shadow-sm">Exynos 1480</span>
+                            <span class="px-2 py-1 bg-white dark:bg-phone-dark rounded text-[10px] font-semibold text-gray-600 dark:text-gray-300 shadow-sm">IP67</span>
+                        </div>
+                        <button class="mt-auto w-full sm:w-auto px-6 py-2.5 rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-sm hover:bg-blue-600 dark:hover:bg-blue-500 dark:hover:text-white transition-colors">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Product 3: Pixel 8a -->
+                <div class="flex flex-col sm:flex-row bg-phone-light dark:bg-[#121a2f] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 group">
+                    <div class="sm:w-2/5 h-48 sm:h-auto relative overflow-hidden bg-gray-200 dark:bg-gray-800 flex-shrink-0 p-4 flex items-center justify-center">
+                        <i class="fab fa-google text-6xl text-phone-accent3 transform group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-6 flex flex-col justify-center flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Pixel 8a</h4>
+                            <span class="text-lg font-bold text-blue-600 dark:text-blue-400">$499</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Incredible AI features</p>
+                        <div class="flex gap-2 mb-6 flex-wrap">
+                            <span class="px-2 py-1 bg-white dark:bg-phone-dark rounded text-[10px] font-semibold text-gray-600 dark:text-gray-300 shadow-sm">Tensor G3</span>
+                            <span class="px-2 py-1 bg-white dark:bg-phone-dark rounded text-[10px] font-semibold text-gray-600 dark:text-gray-300 shadow-sm">7 Yr Updates</span>
+                        </div>
+                        <button class="mt-auto w-full sm:w-auto px-6 py-2.5 rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-sm hover:bg-blue-600 dark:hover:bg-blue-500 dark:hover:text-white transition-colors">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Product 4: Nothing Phone (2a) -->
+                <div class="flex flex-col sm:flex-row bg-phone-light dark:bg-[#121a2f] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 group">
+                    <div class="sm:w-2/5 h-48 sm:h-auto relative overflow-hidden bg-gray-200 dark:bg-gray-800 flex-shrink-0 p-4 flex items-center justify-center">
+                        <img src="assests/nothing-logo.svg" alt="Nothing Phone (2a)" class="w-24 h-24 object-contain transform group-hover:scale-110 transition-transform duration-500 dark:invert">
+                    </div>
+                    <div class="p-6 flex flex-col justify-center flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Nothing Phone (2a)</h4>
+                            <span class="text-lg font-bold text-blue-600 dark:text-blue-400">$349</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Unique glyph interface</p>
+                        <div class="flex gap-2 mb-6 flex-wrap">
+                            <span class="px-2 py-1 bg-white dark:bg-phone-dark rounded text-[10px] font-semibold text-gray-600 dark:text-gray-300 shadow-sm">Dimensity 7200 Pro</span>
+                            <span class="px-2 py-1 bg-white dark:bg-phone-dark rounded text-[10px] font-semibold text-gray-600 dark:text-gray-300 shadow-sm">Glyph UI</span>
+                        </div>
+                        <button class="mt-auto w-full sm:w-auto px-6 py-2.5 rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-sm hover:bg-blue-600 dark:hover:bg-blue-500 dark:hover:text-white transition-colors">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== SECTION 3: BRANDS / CATEGORIES ===== -->
     <section class="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-phone-light dark:bg-phone-dark/80 transition-colors duration-300 w-full">
         <div class="max-w-7xl mx-auto w-full">
@@ -824,56 +935,56 @@
                     <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3">
                         <i class="fab fa-apple text-3xl sm:text-4xl text-gray-700 dark:text-gray-300"></i>
                     </div>
-                    <h4 class="font-bold text-sm sm:text-base">Apple</h4>
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white">Apple</h4>
                     <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400"></p>
                 </div>
                 <div class="bg-white dark:bg-phone-dark rounded-2xl p-4 sm:p-6 text-center border border-phone-accent2/10 hover:border-phone-accent2/40 transition-all">
                     <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent2/10 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3 p-3 sm:p-4">
-                        <img src="assests/samsung-logo.svg" alt="Samsung" class="w-full h-full object-contain">
+                        <img src="assests/samsung-logo.svg" alt="Samsung" class="w-full h-full object-contain dark:invert">
                     </div>
-                    <h4 class="font-bold text-sm sm:text-base">Samsung</h4>
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white">Samsung</h4>
                     <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400"></p>
                 </div>
                 <div class="bg-white dark:bg-phone-dark rounded-2xl p-4 sm:p-6 text-center border border-phone-accent3/10 hover:border-phone-accent3/40 transition-all">
                     <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-accent3/10 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3">
                         <i class="fab fa-google text-3xl sm:text-4xl text-phone-accent3"></i>
                     </div>
-                    <h4 class="font-bold text-sm sm:text-base">Google</h4>
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white">Google</h4>
                     <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400"></p>
                 </div>
                 <div class="bg-white dark:bg-phone-dark rounded-2xl p-4 sm:p-6 text-center border border-phone-purple/10 hover:border-phone-purple/40 transition-all">
                     <div class="w-16 sm:w-20 h-16 sm:h-20 bg-phone-purple/10 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3 p-3 sm:p-4">
-                        <img src="assests/oneplus-logo.svg" alt="OnePlus" class="w-full h-full object-contain">
+                        <img src="assests/oneplus-logo.svg" alt="OnePlus" class="w-full h-full object-contain dark:invert">
                     </div>
-                    <h4 class="font-bold text-sm sm:text-base">OnePlus</h4>
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white">OnePlus</h4>
                     <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400"></p>
                 </div>
                 <div class="bg-white dark:bg-phone-dark rounded-2xl p-4 sm:p-6 text-center border border-orange-500/10 hover:border-orange-500/40 transition-all">
                     <div class="w-16 sm:w-20 h-16 sm:h-20 bg-orange-500/10 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3 p-3 sm:p-4">
-                        <img src="assests/xiaomi-logo.svg" alt="Xiaomi" class="w-full h-full object-contain">
+                        <img src="assests/xiaomi-logo.svg" alt="Xiaomi" class="w-full h-full object-contain dark:invert">
                     </div>
-                    <h4 class="font-bold text-sm sm:text-base">Xiaomi</h4>
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white">Xiaomi</h4>
                     <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400"></p>
                 </div>
                 <div class="bg-white dark:bg-phone-dark rounded-2xl p-4 sm:p-6 text-center border border-green-500/10 hover:border-green-500/40 transition-all">
                     <div class="w-16 sm:w-20 h-16 sm:h-20 bg-green-500/10 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3 p-3 sm:p-4">
-                        <img src="assests/oppo-logo.svg" alt="Oppo" class="w-full h-full object-contain">
+                        <img src="assests/oppo-logo.svg" alt="Oppo" class="w-full h-full object-contain dark:invert">
                     </div>
-                    <h4 class="font-bold text-sm sm:text-base">Oppo</h4>
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white">Oppo</h4>
                     <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400"></p>
                 </div>
                 <div class="bg-white dark:bg-phone-dark rounded-2xl p-4 sm:p-6 text-center border border-blue-500/10 hover:border-blue-500/40 transition-all">
                     <div class="w-16 sm:w-20 h-16 sm:h-20 bg-blue-500/10 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3 p-3 sm:p-4">
                         <img src="assests/vivo-logo.png" alt="Vivo" class="w-full h-full object-contain">
                     </div>
-                    <h4 class="font-bold text-sm sm:text-base">Vivo</h4>
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white">Vivo</h4>
                     <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400"></p>
                 </div>
                 <div class="bg-white dark:bg-phone-dark rounded-2xl p-4 sm:p-6 text-center border border-gray-500/10 hover:border-gray-500/40 transition-all">
                     <div class="w-16 sm:w-20 h-16 sm:h-20 bg-gray-500/10 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3 p-3 sm:p-4">
                         <img src="assests/nothing-logo.svg" alt="Nothing" class="w-full h-full object-contain dark:invert opacity-70">
                     </div>
-                    <h4 class="font-bold text-sm sm:text-base">Nothing</h4>
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white">Nothing</h4>
                     <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400"></p>
                 </div>
             </div>
@@ -889,14 +1000,14 @@
                 <div class="w-16 sm:w-20 h-1.5 bg-phone-accent mx-auto mt-3 sm:mt-4 rounded-full"></div>
                 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-3 sm:mt-4 text-sm sm:text-base">Compare the top smartphones and find the perfect match for you.</p>
             </div>
-            <div class="overflow-x-auto">
+            <div class="overflow-x-auto rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
                 <table class="w-full border-collapse">
                     <thead>
-                        <tr class="bg-gradient-to-r from-phone-accent to-phone-accent2 text-phone-primary">
-                            <th class="p-3 sm:p-4 text-left font-bold rounded-l-2xl text-xs sm:text-sm">Feature</th>
-                            <th class="p-3 sm:p-4 text-center font-bold text-xs sm:text-sm">iPhone 15 Pro Max</th>
-                            <th class="p-3 sm:p-4 text-center font-bold text-xs sm:text-sm">Samsung S24 Ultra</th>
-                            <th class="p-3 sm:p-4 text-center font-bold rounded-r-2xl text-xs sm:text-sm">Pixel 8 Pro</th>
+                        <tr class="bg-gray-900 dark:bg-[#121a2f] text-white">
+                            <th class="p-4 sm:p-5 text-left font-bold text-sm sm:text-base border-b border-gray-700">Feature</th>
+                            <th class="p-4 sm:p-5 text-center font-bold text-sm sm:text-base border-b border-gray-700">iPhone 15 Pro Max</th>
+                            <th class="p-4 sm:p-5 text-center font-bold text-sm sm:text-base border-b border-gray-700">Samsung S24 Ultra</th>
+                            <th class="p-4 sm:p-5 text-center font-bold text-sm sm:text-base border-b border-gray-700">Pixel 8 Pro</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
